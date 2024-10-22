@@ -1,0 +1,32 @@
+.sect-img-txt{
+    display: flex;
+   gap:4vw;
+  justify-content: center;
+   align-items: center;
+}
+.sectOne-header,.section-desc{
+font-family: Roboto;
+text-align: center;
+margin-top:10px;
+font-size: 40px;
+font-weight: 700;
+}
+.sectOne-txt{
+    width:35vw;
+}
+ .sectImg{
+    width:400px;
+    height:300px;
+
+}
+.info-btn{
+    background-color: #FF5722;
+    border:none;
+    padding:0.7vh 1.4vw;
+}
+.sect-two{
+    margin:10vh 0;
+}
+.whyChoose-sect{
+    margin:10vh 0;
+}

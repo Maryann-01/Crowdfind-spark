@@ -1,0 +1,26 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.container-fluid{
+    display:flex;
+    align-items: center;
+    /* width:100%;
+    justify-content: center;
+    border:2px solid red;
+    margin-left: 35px; */
+}
+.navbar{
+    /* border:2px solid red; */
+display:flex;
+align-items: center;
+justify-content: center;
+    width:100vw;
+}
+.navbar-nav {
+    /* border:2px solid red;
+    display:flex;
+    justify-content: space-around;
+    gap:10px; */
+}
