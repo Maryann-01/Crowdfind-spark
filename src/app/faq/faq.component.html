@@ -1,8 +1,8 @@
-<div>
+<div class="">
     <h2 style="text-align: center; margin:2vh 0vw">Frequently Asked Questions</h2>
     <div class="accordion">
         <div *ngFor="let faq of faqs; let i = index" class="accordion-item">
-          <h2 class="accordion-header">
+          <h2 class="accordion-header faq-sect">
             <button (click)="toggleAccordion(i)" class="accordion-button">
               {{ faq.question }}
               
