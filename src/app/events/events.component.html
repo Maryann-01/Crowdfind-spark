@@ -1,0 +1,25 @@
+<div class="event-comp">
+  <app-navbar></app-navbar>
+  <app-home-info-shared></app-home-info-shared>
+  <section class="myEvents">
+      <h2>Trending Events</h2>
+      <div class="container mt-4">
+          <div class="row">
+            <div *ngFor="let event of events | slice:0:12" class="col-md-6 mb-4">
+              <div class="card h-100">
+                <div class="card-body">
+                  <h5 class="card-title">{{ event.title }}</h5>
+                  <p class="card-text">{{ event.description }}</p>
+                  <p class="card-text"></p>
+                  <p class="card-text"><small class="text-muted">{{ event.date | date:'short' }}</small></p>
+                    
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>      
+  </section>
+  <app-stay-updated></app-stay-updated>
+  <app-footer></app-footer>
+</div>
