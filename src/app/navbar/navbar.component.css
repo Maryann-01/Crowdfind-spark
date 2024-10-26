@@ -29,11 +29,13 @@ font-weight: 400;
 .input-group{
     display:flex;
     align-items: center;
-    width:10vw;
+    width:12vw;
+    /* padding:0px 10px; */
     border: 1px solid #FF5722;
 }
 .input-group .bi-search{
     text-align: center;
+    margin-left:10px;
 }
 .form-control{
     outline:none;

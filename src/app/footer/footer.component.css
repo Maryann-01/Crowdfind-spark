@@ -9,11 +9,9 @@
 .footer{
     background: #FF5722;
     color:white;
-    width:100vw;
 display:flex;
 flex-direction: column;
 justify-content: space-around;
-gap:1.2vh;
 }
 .crowdfundlogo-div h2{
     font-family: Montserrat;
@@ -70,7 +68,7 @@ height: 20px;
     gap:1.3vw;
 }
 .socials{
-    /* margin-bottom:2vh; */
+    margin-bottom:2.5vh;
     justify-content: space-around;
 font-family: Roboto;
 font-size: 0.8em;

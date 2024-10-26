@@ -6,15 +6,20 @@
     align-items: center;
     justify-content: center;
   }
-  
+  .heart-icon {
+    width: 24px;
+    height: 24px;
+    transition: filter 0.3s;
+}
+
   .event-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
-    grid-gap: 2rem; 
+    grid-gap: 3rem; 
     padding: 1rem;
     
   }
-  
+
   .event-card {
     display: flex;
     flex-direction: column;

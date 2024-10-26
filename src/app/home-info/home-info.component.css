@@ -1,32 +1,59 @@
-.sect-img-txt{
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+}
+.home-info-sect-two .sect-img-txt{
     display: flex;
-   gap:4vw;
+   gap:6vw;
   justify-content: center;
    align-items: center;
 }
-.sectOne-header,.section-desc{
+.home-info-sect-two .section-desc{
 font-family: Roboto;
 text-align: center;
 margin-top:10px;
 font-size: 40px;
 font-weight: 700;
+margin:8vh 0  4vh;
 }
-.sectOne-txt{
+.body{
+    color: #000000;
+    font-family: Open Sans;
+    font-size: 16px;
+    font-weight: 700;
+}
+.home-info-sect-two .section-txt{
     width:35vw;
+    display:flex;
+    flex-direction: column;
 }
- .sectImg{
-    width:400px;
-    height:300px;
+ .home-info-sect-two .sectImg{
+    width:450px;
+    height:350px;
 
 }
 .info-btn{
     background-color: #FF5722;
     border:none;
     padding:0.7vh 1.4vw;
+    color: #F5F5F5;
+    width:25vw;
+    margin-top: 3vh;
 }
-.sect-two{
-    margin:10vh 0;
+.list-div li{
+    margin:3vh 0 2vh;
 }
 .whyChoose-sect{
     margin:10vh 0;
 }
+.whyChoose-sect-txt{
+    width:5vw;
+  }
+  .whyChoose-sect-img-txt{
+    gap:3vw;
+  }
+  .whyChoose-sect-img-txt img{
+  width:400px;
+  height:300px;
+  } 

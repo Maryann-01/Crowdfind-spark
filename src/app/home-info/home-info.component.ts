@@ -8,7 +8,7 @@ import { HomeInfoSharedComponent } from '../home-info-shared/home-info-shared.co
   standalone: true,
   imports: [FeaturedEventsComponent, FaqComponent,HomeInfoSharedComponent],
   templateUrl: './home-info.component.html',
-  styleUrl: './home-info.component.css'
+  styleUrls: ['./home-info.component.css'],
 })
 export class HomeInfoComponent {
 
