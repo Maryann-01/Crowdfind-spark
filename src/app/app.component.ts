@@ -6,11 +6,12 @@ import { HomeInfoSharedComponent } from './home-info-shared/home-info-shared.com
 import { FooterComponent } from './footer/footer.component';
 // import { provideHttpClient } from '@angular/common/http';
 import { NavbarComponent } from './navbar/navbar.component';
+import { ClipboardModule } from '@angular/cdk/clipboard';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,HomeComponent,NavbarComponent,EventsComponent,HomeInfoSharedComponent,FooterComponent],
+  imports: [RouterOutlet,ClipboardModule,HomeComponent,NavbarComponent,EventsComponent,HomeInfoSharedComponent,FooterComponent],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
   // providers: [provideHttpClient()]

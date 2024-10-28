@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FeaturedEventsComponent } from "../featured-events/featured-events.component";
+
 import { FaqComponent } from "../faq/faq.component";
 import { HomeInfoSharedComponent } from '../home-info-shared/home-info-shared.component';
 

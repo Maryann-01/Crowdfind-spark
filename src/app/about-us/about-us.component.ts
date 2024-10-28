@@ -14,13 +14,13 @@ import { HomeInfoSharedComponent } from '../home-info-shared/home-info-shared.co
 })
 export class AboutUsComponent {
   teamMembers = [
-    { name: 'Dubem', job: 'COO', image: 'assets/images/Chidubem Ojukwu.jpg' },
+    { name: 'Dubem', job: 'Project Manager', image: 'assets/images/Chidubem Ojukwu.jpg' },
     { name: 'GodFirst', job: 'UI/UX Designer', image: 'assets/images/Godfirst Azubuike.jpg' },
     { name: 'Tejiri', job: 'UI/UX Designer', image: 'assets/images/Oghenetejiri Omaduvie.JPG' },
     { name: 'Blessing', job: 'Backend Developer', image: 'assets/images/Blessing Peters.JPG' },
-    { name: 'Amarachukwu', job: 'Backend Developer', image: 'assets/images/Blessing Peters.JPG' },
+    { name: 'Amarachukwu', job: 'Backend Developer', image: 'assets/images/Amarachukwu.png' },
     { name: 'Mmesoma', job: 'Frontend Developer', image: 'assets/images/Mmesoma Amaraizu.JPEG' },
     { name: 'Reagan', job: 'Frontend Developer', image: 'assets/images/Reagan Ijeomah.jpg' },
-    { name: 'Jessica', job: 'Quaality Assurance', image: 'assets/images/Jessica Wada.HEIC' }
+    { name: 'Jessica', job: 'Quality Assurance', image: 'assets/images/Jessica Wada.HEIC' }
   ];
 }
