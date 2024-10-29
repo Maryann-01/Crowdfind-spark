@@ -3,6 +3,7 @@ import { Router, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { EventService } from '../services/event.service';
+import { AuthService } from '../services/auth.services';
 
 @Component({
   selector: 'app-navbar',
@@ -16,13 +17,24 @@ export class NavbarComponent {
   searchQuery: string = '';
   filteredEvents: any[] = [];
   showDropdown: boolean = false;
-  isLoggedIn: boolean = false; // Simulate logged-in state
+  isLoggedIn: boolean = false;
 
-  constructor(private eventService: EventService, private router: Router) {}
+  constructor(private eventService: EventService, private router: Router, private authService: AuthService) {
+    this.isLoggedIn = this.authService.loggedIn; 
+  }
 
-  // Simulate user login (this should eventually be set by an auth service)
+  ngOnInit() {
+    this.isLoggedIn = this.authService.loggedIn;
+  }
+
   toggleLoginState(): void {
-    this.isLoggedIn = !this.isLoggedIn;
+    if (this.isLoggedIn) {
+      this.authService.logout();
+      this.isLoggedIn = false;
+    } else {
+      // Here, you might want to redirect to the login page
+      this.router.navigate(['/login']);
+    }
   }
 
   onSearch(): void {

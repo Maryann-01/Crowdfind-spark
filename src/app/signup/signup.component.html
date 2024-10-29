@@ -1,4 +1,4 @@
-<div class="container">
+<div class="signupDiv">
     <div class="left-section">
       <div class="logo">
         <img src="assets/images/Crowdfund-logo.png" alt="CrowdFind Logo" />
@@ -23,6 +23,15 @@
   
         <!-- Form -->
         <form (submit)="onSubmit($event)">
+          <label class="mend">Full Name</label>
+          <input
+            class="log"
+            type="text"
+            placeholder="Enter Your Full Name Here"
+            required
+            [(ngModel)]="name"
+            name="name"
+          />
           <label class="mend">Email</label>
           <input
             class="log"
@@ -55,17 +64,14 @@
   
           <div class="checkbox-container">
             <input type="checkbox" id="terms" [(ngModel)]="termsAccepted" name="terms" required />
-            <label class="cont" for="terms">
-              I have read and agree to the <a href="#">Terms and Conditions</a>
-              <br />
-              of CrowdFind
-            </label>
+            <p class="cont" >
+              I have read and agree to the <span class="tnC">Terms and Conditions</span> of CrowdFind</p>
           </div>
   
           <button type="submit" class="signup-btn">Create Account</button>
         </form>
   
-        <span>Have an Account? <a [routerLink]="['/login']">Login</a></span>
+        <span style="font-size:11px;">Have an Account? <a [routerLink]="['/login']">Login</a></span>
       </div>
     </div>
   </div>

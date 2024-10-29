@@ -6,19 +6,39 @@
     padding: 0;
     font-family: "Poppins", sans-serif;
 }
-body {
-    display: flex;
-    height: 100vh;
-}
 
-.container {
+
+.loginDiv {
     display: flex;
     width: 100%;
 }
+.left-section {
+    width: 100%;
+    background: url('/assets/images/unsplash.jpg') no-repeat center center; 
+    object-fit: cover;
+     position: relative;
+    flex: 1;
+}
+
+.logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 24px;
+    font-weight: 600;
+    color: #FF5722;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
 
 .image-section {
     width: 50%;
-    background: url('/assets/images/unsplash.jpg') no-repeat center center;
     background-size: cover;
 }
 
@@ -42,32 +62,39 @@ body {
 }
 
 .form-container h2 {
-
-    font-size: small;
     margin-top: 10px;
     margin-bottom: 5px;
+font-family: Open Sans;
+font-size: 24px;
+font-weight: 700;
+color: #2C2A2A;
 }
 p {
-    color: #777;
+
     margin-bottom: 15px;
-    font-size: 7.5px;
+   color: #545454;
+font-family: Open Sans;
+font-size: 14px;
+font-weight: 400;
 }
 
 .google-signup {
     background: none;
-    font-size: xx-small;
-    font-weight: 600;
-    border: 1px solid #433a3a;
+    border: 1px solid #2C2A2A;
     border-radius: 3px;
-    height: 22px;
+    /* height: 22px; */
     width: 50%;
     cursor: pointer;
     margin-top: 3px;
     margin-bottom: 5px;
+padding:4px;
+font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 500;
 }
 
 .google-signup img {
-    height: 7px;
+    height: 20px;
     margin-right: 5px;
 }
 .divider {
@@ -87,51 +114,43 @@ p {
 }
 
 .form-container .log {
-    width: 50%;
-    height: 22px;
-    padding: 10px;
-    margin: 3px 0;
     border: 1px solid #433a3a;
     border-radius: 3px;
     box-sizing: border-box;
-    font-size: 8px;
+    width: 60%;
+    height: 25px;
+    padding: 12px;
+    margin-top: 3px;
 }
 
 .form-container input::placeholder {
-    font-weight: normal;
-    opacity: 0.4;
-    color: #ccc; 
+    color: #C9A6BCB9;
+    font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 400;
 }
 .checkbox-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-size: small;
-    padding-top: 5px;
-
+    margin: 10px 0px 0px;
 }
 
 .form-control {
-    display: inline-flex;
+
     justify-items: center;
     gap: 2px;
 }
 .checkbox-container input {
-    display: inline-flex;
     transform: scale(0.5);
     cursor: pointer;
+    width:20px;
+    height:30px;
 }
 .checkbox-container label {
   
     font-size: 7.5px;
-    /* min-width: 150px; */
-    align-items: center;
 }
   
-.forgot-password {
-    font-size: 7.5px;
-    margin-right: 200px;
-}
+
 
 .signup-btn {
     background: #FF5722;
@@ -139,14 +158,13 @@ p {
     border: none;
     border-radius: 3px;
     cursor: pointer;
-    width: 50%;
-    height: 22px;
+    width: 65%;
+   padding:10px;
     font-size: xx-small;
     margin-top: 15px;
 }
 
 span {
-    font-size: 7.5px;
     display: flex;
     justify-content: flex-start;
     text-align: center;

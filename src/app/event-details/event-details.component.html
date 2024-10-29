@@ -39,10 +39,14 @@
     </div>
 </section>
 
-<app-interest-modal 
-  [showModal]="showModal" 
+<!-- Assuming this is in the parent component template -->
+<app-interest-modal
+  *ngIf="showModal"
+  [showModal]="showModal"
+  [eventId]="selectedEventId"
   (closeModal)="closeModal()">
 </app-interest-modal>
+
 
 <app-stay-updated></app-stay-updated>
 <app-footer></app-footer>

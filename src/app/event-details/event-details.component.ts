@@ -16,6 +16,7 @@ interface Event {
   liked: boolean;
   description: string;
   tags: string[];
+  // selectedEventId: string = '';
 }
 
 @Component({
@@ -26,8 +27,9 @@ interface Event {
   styleUrls: ['./event-details.component.css']
 })
 export class EventDetailsComponent implements OnInit {
-  event: Event | undefined; 
-  showModal: boolean = false; 
+  event: Event | undefined;
+  showModal: boolean = false;
+  selectedEventId: string = ''; // Add selectedEventId property
 
   constructor(
     private route: ActivatedRoute,
@@ -49,7 +51,8 @@ export class EventDetailsComponent implements OnInit {
       next: (events) => {
         this.event = events.find((event) => event._id === id);
         if (this.event) {
-          console.log('Fetched event details:', this.event); 
+          this.selectedEventId = this.event._id; // Set selectedEventId once event is found
+          console.log('Fetched event details:', this.event);
         } else {
           console.error('Event not found with ID:', id);
         }
@@ -62,7 +65,7 @@ export class EventDetailsComponent implements OnInit {
 
   toggleLike(): void {
     if (this.event) {
-      this.event.liked = !this.event.liked; 
+      this.event.liked = !this.event.liked;
       console.log('Event liked status:', this.event.liked);
     }
   }

@@ -20,7 +20,7 @@
 
         <div class="d-flex flex-column label-input">
           <label for="phoneNumber">Phone Number:</label>
-          <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" required plaxeholder="Enter Your Phone Number Here"/>
+          <input type="tel" id="phoneNumber" name="phoneNumber" [(ngModel)]="phoneNumber" required placeholder="Enter Your Phone Number Here"/>
         </div>
 
         <div class="d-flex flex-column label-input">
@@ -39,12 +39,11 @@
       </form>
     </div>
 
-   <!-- Success Modal  -->
     <div *ngIf="showSuccessModal" class="success-modal">
       <img src="assets/images/success image.png" alt="success image"/>
-      <p style="text-align: center;">Event has been Booked Successfully </p>
+      <p style="text-align: center;">Event has been Booked Successfully</p>
       <p style="text-align: center;">Kindly check your mail for your ticket and other Information</p>
-      <a style="color: #FF5722;text-decoration: none;text-align: center;"(click)="closeSuccessModal()" [routerLink]="['/home']" class="home-link">Click here to go back to Home</a>
+      <a style="color: #FF5722;text-decoration: none;text-align: center;" (click)="closeSuccessModal()" [routerLink]="['/home']" class="home-link">Click here to go back to Home</a>
     </div>
   </div>
 </div>

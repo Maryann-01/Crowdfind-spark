@@ -1,23 +1,35 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { AuthService } from '../services/auth.services'; // Ensure this import is correct
+
 @Component({
   selector: 'app-login',
   standalone: true,
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  imports: [RouterModule, FormsModule,CommonModule]
+  imports: [FormsModule, RouterModule]
 })
 export class LoginComponent {
   email: string = '';
   password: string = '';
-  rememberMe: boolean = false;
+  rememberMe: boolean = false; 
+
+  constructor(private http: HttpClient, private router: Router, private authService: AuthService) {}
 
   onSubmit() {
-    
-    console.log('Email:', this.email);
-    console.log('Password:', this.password);
-    console.log('Remember Me:', this.rememberMe);
+    const loginData = { email: this.email, password: this.password };
+    this.http.post<{ token: string }>('https://crowdfind-backend.onrender.com/api/auth/login', loginData)
+      .subscribe({
+        next: (response) => {
+          this.authService.login(response.token);  
+          this.router.navigate(['/home']);  
+        },
+        error: (error) => {
+          console.error("Login failed", error);
+        }
+      });
   }
 }

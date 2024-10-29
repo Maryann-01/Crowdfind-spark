@@ -9,20 +9,20 @@
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
-
-/* Container Styling */
-.container {
+.signupDiv{
     display: flex;
     height: 100vh;
-    width: 100%;
+   
+    width:100vw;
 }
 
-/* Left Section Styling (Image) */
+
 .left-section {
-    width: 50%;
-    background: url('/assets/images/unsplash.jpg') no-repeat center center;
-    background-size: cover;
-    position: relative;
+    width: 100%;
+    background: url('/assets/images/unsplash.jpg') no-repeat center center; 
+    object-fit: cover;
+     position: relative;
+    flex: 1;
 }
 
 .logo {
@@ -41,13 +41,13 @@
     margin-right: 10px;
 }
 
-/* Right Section Styling (Form) */
+
 .right-section {
     background: url('/assets/images/Frame 1000014043.png') ;
     background-size: cover;
     background-position: center;
     height: 100vh;
-    width: 50%;
+    flex: 1; 
     background-color: #f8f9fa;
     display: flex;
     align-items: center;
@@ -58,24 +58,24 @@
 
 .form-container {
     width: 80%;
-    max-width: 400px;
+    /* max-width: 400px; */
     /* text-align: center; */
 }
 
 .form-container h2 {
     margin-top: 50px;
     margin-left: 30px;
-    text-align: left;
-    font-size: 24px;
-    font-size: 15px;
     margin-bottom: 5px;
+    font-family: Open Sans;
+font-size: 24px;
+font-weight: 700;
+color: #2C2A2A;
 }
-
 
 .form-container p {
     padding-left: 10px;
     align-items: center;
-    font-size: xx-small;
+    font-size: 12px;
     color: #555;
     padding-top: 7px;
     margin-bottom: 30px;
@@ -123,13 +123,15 @@
     display: flex;
     flex-direction: column;
     margin-top: 10px;
-    font-size: 10px;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 400;     
 }
 
 .form-container .log {
     width: 60%;
     height: 25px;
-    padding: 10px;
+    padding: 12px;
     margin-top: 3px;
     /* margin: 3px 0; */
     border: 1px solid #ccc;
@@ -138,39 +140,38 @@
 }
 
 .form-container input::placeholder {
-    font-size: xx-small;
-    font-weight: normal;
-    opacity: 0.4;
-    color: #ccc; 
+    color: #C9A6BCB9;
+    font-family: Open Sans;
+    font-size: 12px;
+    font-weight: 400;
   }
 
 
 .checkbox-container {
-    /* display: inline-flex; */
-    align-items: center;
-    text-align: left;
-    padding-top: 5px;
-    /* margin: 10px 0; */
+    display: flex;
+    margin: 10px 0px 0px;
 }
 
 .checkbox-container .cont {
-    font-size: xx-small;
-    
+font-family: Open Sans;
+font-size: 12px;
+font-weight: 400;
+color: #2C2A2A;
+width:75%;
+/* padding-top: 10px; */
 }
-
+.tnC{
+    color: #FF5722;
+}
 
 .checkbox-container input {
     /* margin-right: 2px; */
     transform: scale(0.7);
     cursor: pointer;
-    
+    width:20px;
+    height:30px;
 }
 
-
-.form-container span {
-    font-size: x-small;
-    padding-left: 60px;
-}
 .signup-btn {
     background: #FF5722;
     color: #fff;
@@ -179,8 +180,10 @@
     cursor: pointer;
     width: 60%;
     height: 28px;
-    font-size: xx-small;
+    font-size: 12px;
+    padding:9px;
     margin-top: 10px;
+    text-align: center;
 }
 
 .signup-btn:hover {

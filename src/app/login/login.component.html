@@ -1,15 +1,16 @@
-<div class="container">
-    <!-- Image Section -->
-    <div class="image-section">
-      <img src="assets/images/image.png" alt="Image Section" />
+<div class="loginDiv">
+  <div class="left-section image-section">
+    <div class="logo">
+      <img src="assets/images/Crowdfund-logo.png" alt="CrowdFind Logo" />
+      <span>CrowdFind</span>
     </div>
+  </div>
   
     <div class="form-section">
       <div class="form-container">
         <h2>Welcome Back to CrowdFind!</h2>
         <p>Please, Login to your account to access our features</p>
   
-        <!-- Google Login Button -->
         <button class="google-signup">
           <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo" />
           Log in with Google
@@ -17,7 +18,7 @@
   
         <div class="divider">---- or enter details below ----</div>
   
-        <!-- Login Form -->
+
         <form (ngSubmit)="onSubmit()">
           <label class="mend">Email</label>
           <input class="log" type="email" placeholder="Enter Your Email Address Here" [(ngModel)]="email" name="email" />
@@ -25,18 +26,18 @@
           <label class="mend">Password</label>
           <input class="log" type="password" placeholder="Enter Password Here" [(ngModel)]="password" name="password" />
   
-          <div class="checkbox-container">
-            <div class="form-control">
+          <div class="checkbox-container d-flex justify-space-between align-items-center">
+            <div class="checkbox-rm d-flex align-items-center">
               <input type="checkbox" id="remember-me" [(ngModel)]="rememberMe" name="rememberMe" />
-              <label for="remember-me">Remember me</label>
+              <p class="" >Remember me</p>
             </div>
-            <a [routerLink]="'/forgot-password'" class="forgot-password">Forgot Password?</a>
+            <a [routerLink]="'/forgot-password'" class="forgot-password" style="font-size:12px;">Forgot Password?</a>
           </div>
   
           <button type="submit" class="signup-btn">Login</button>
         </form>
-  
-        <span>Don't have an Account? <a [routerLink]="'/signup'">Sign Up</a></span>
+        
+        <span style="font-size:10px;">Don't have an Account? <a [routerLink]="'/signup'"  style="font-size:10px;">Sign Up</a></span>
       </div>
     </div>
   </div>

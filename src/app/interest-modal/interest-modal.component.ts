@@ -2,8 +2,10 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { EventService } from '../services/event.service';
+import { AuthService } from '../services/auth.services';
 import { HomeComponent } from '../home/home.component';
 import { RouterModule } from '@angular/router';
+
 @Component({
   selector: 'app-interest-modal',
   standalone: true,
@@ -13,7 +15,7 @@ import { RouterModule } from '@angular/router';
 })
 export class InterestModalComponent {
   @Input() showModal: boolean = false;
-  @Input() eventId!: string;
+  @Input() eventId!: string; // Ensure this is passed from the parent component
   @Output() closeModal: EventEmitter<void> = new EventEmitter();
 
   email: string = '';
@@ -23,10 +25,23 @@ export class InterestModalComponent {
   agreeToEmails: boolean = false;
   showSuccessModal: boolean = false;
 
-  constructor(private eventService: EventService) {}
+  constructor(
+    private eventService: EventService,
+    private authService: AuthService // Use AuthService
+  ) {}
 
   onSubmit(): void {
-    const token = '<your_token_here>'; // Replace  this token dynamically
+    const token = this.authService.getToken(); // Get token from AuthService
+
+    if (!token) {
+      alert('User is not authenticated. Please log in.');
+      return;
+    }
+
+    if (!this.eventId) {  // Check if eventId is set
+      alert('Event ID is missing. Please try again.');
+      return;
+    }
 
     this.eventService.indicateInterest(this.eventId, this.numberOfAttendees, token).subscribe({
       next: (response) => {
@@ -35,7 +50,11 @@ export class InterestModalComponent {
       },
       error: (error) => {
         console.error('Error booking the event:', error);
-        alert('There was an error booking the event. Please try again later.');
+        if (error.status === 401) {
+          alert('Unauthorized: Please log in again.');
+        } else {
+          alert('There was an error booking the event. Please try again later.');
+        }
       }
     });
   }
