@@ -16,42 +16,40 @@ export class NavbarComponent {
   searchQuery: string = '';
   filteredEvents: any[] = [];
   showDropdown: boolean = false;
+  isLoggedIn: boolean = false; // Simulate logged-in state
 
   constructor(private eventService: EventService, private router: Router) {}
 
+  // Simulate user login (this should eventually be set by an auth service)
+  toggleLoginState(): void {
+    this.isLoggedIn = !this.isLoggedIn;
+  }
+
   onSearch(): void {
     if (this.searchQuery.length > 0) {
-      this.eventService.getEvents().subscribe(
-        (events) => {
-          console.log("Events fetched:", events);
+      this.eventService.getEvents().subscribe({
+        next: (events) => {
           this.filteredEvents = events.filter((event) =>
             event.title?.toLowerCase().includes(this.searchQuery.toLowerCase())
           );
           this.showDropdown = this.filteredEvents.length > 0;
         },
-        (error) => {
-          console.error("Error fetching events:", error);
+        error: (error) => {
+          console.error('Error fetching events:', error);
           this.filteredEvents = [];
           this.showDropdown = false;
         }
-      );
+      });
     } else {
       this.showDropdown = false;
     }
   }
 
   onSelectEvent(eventId: string | undefined): void {
-    console.log("Event ID selected:", eventId);
     if (eventId) {
-      this.searchQuery = '';  
-      this.showDropdown = false; 
-
-      this.router.navigate(['/event-details', eventId]).then(
-        () => console.log("Navigation successful to:", `/event-details/${eventId}`),
-        (error) => console.error("Navigation error:", error)
-      );
-    } else {
-      console.error("Invalid event ID:", eventId);
+      this.searchQuery = '';
+      this.showDropdown = false;
+      this.router.navigate(['/event-details', eventId]);
     }
   }
 
@@ -60,8 +58,7 @@ export class NavbarComponent {
     const target = event.target as HTMLElement;
     const isDropdown = target.closest('.dropdown-menu') !== null;
     const isSearchInput = target.closest('.nav-form') !== null;
-    
-     
+
     if (!isDropdown && !isSearchInput) {
       this.showDropdown = false;
     }

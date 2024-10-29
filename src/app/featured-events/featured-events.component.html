@@ -2,7 +2,7 @@
   <h2 style="text-align: center; margin-top: 8vh;">Featured Events</h2>
   <div class="event-container mt-4">
     <div class="event-grid">
-      <div *ngFor="let event of events | slice: 0:6" class="event-card">
+      <div *ngFor="let event of displayedEvents" class="event-card">
         <div class="card h-100">
           <img [src]="event.img" class="card-img-top trend-event-img" alt="{{ event.title }}" style="height: 200px; object-fit: cover;" />
           <div class="card-body">
@@ -12,7 +12,7 @@
                 alt="{{ event.liked ? 'Unlike event' : 'Like event' }}" 
                 (click)="toggleLike(event); $event.stopPropagation();" 
                 style="cursor: pointer;" />
-                <img 
+              <img 
                 src="assets/images/Share 1.png" 
                 alt="Share event" 
                 (click)="shareEventLink(event)" 
@@ -26,6 +26,10 @@
           </div>
         </div>
       </div>
+    </div>
+   
+    <div class="text-center mt-4">
+      <button class="event-btn explore-more-btn" (click)="loadMore()">Explore More Events</button>
     </div>
   </div>
 </section>

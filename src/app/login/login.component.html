@@ -1,0 +1,43 @@
+<div class="container">
+    <!-- Image Section -->
+    <div class="image-section">
+      <img src="assets/images/image.png" alt="Image Section" />
+    </div>
+  
+    <div class="form-section">
+      <div class="form-container">
+        <h2>Welcome Back to CrowdFind!</h2>
+        <p>Please, Login to your account to access our features</p>
+  
+        <!-- Google Login Button -->
+        <button class="google-signup">
+          <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo" />
+          Log in with Google
+        </button>
+  
+        <div class="divider">---- or enter details below ----</div>
+  
+        <!-- Login Form -->
+        <form (ngSubmit)="onSubmit()">
+          <label class="mend">Email</label>
+          <input class="log" type="email" placeholder="Enter Your Email Address Here" [(ngModel)]="email" name="email" />
+  
+          <label class="mend">Password</label>
+          <input class="log" type="password" placeholder="Enter Password Here" [(ngModel)]="password" name="password" />
+  
+          <div class="checkbox-container">
+            <div class="form-control">
+              <input type="checkbox" id="remember-me" [(ngModel)]="rememberMe" name="rememberMe" />
+              <label for="remember-me">Remember me</label>
+            </div>
+            <a [routerLink]="'/forgot-password'" class="forgot-password">Forgot Password?</a>
+          </div>
+  
+          <button type="submit" class="signup-btn">Login</button>
+        </form>
+  
+        <span>Don't have an Account? <a [routerLink]="'/signup'">Sign Up</a></span>
+      </div>
+    </div>
+  </div>
+  

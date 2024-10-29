@@ -18,9 +18,9 @@ export class AboutUsComponent {
     { name: 'GodFirst', job: 'UI/UX Designer', image: 'assets/images/Godfirst Azubuike.jpg' },
     { name: 'Tejiri', job: 'UI/UX Designer', image: 'assets/images/Oghenetejiri Omaduvie.JPG' },
     { name: 'Blessing', job: 'Backend Developer', image: 'assets/images/Blessing Peters.JPG' },
-    { name: 'Amarachukwu', job: 'Backend Developer', image: 'assets/images/Amarachukwu.png' },
+    { name: 'Amarachukwu', job: 'Backend Developer', image: 'assets/images/Amarachukwu Nweke.jpg' },
     { name: 'Mmesoma', job: 'Frontend Developer', image: 'assets/images/Mmesoma Amaraizu.JPEG' },
     { name: 'Reagan', job: 'Frontend Developer', image: 'assets/images/Reagan Ijeomah.jpg' },
-    { name: 'Jessica', job: 'Quality Assurance', image: 'assets/images/Jessica Wada.HEIC' }
+    { name: 'Jessica', job: 'Quality Assurance', image: 'assets/images/Jessica Wada.jpg' }
   ];
 }
