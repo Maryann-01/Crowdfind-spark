@@ -132,6 +132,8 @@ font-family: Open Sans;
 .checkbox-container {
     display: flex;
     margin: 10px 0px 0px;
+    gap:2vw;
+    align-items: center;
 }
 
 .form-control {
@@ -142,14 +144,9 @@ font-family: Open Sans;
 .checkbox-container input {
     transform: scale(0.5);
     cursor: pointer;
-    width:20px;
-    height:30px;
+    width:22px;
+    height:32px;
 }
-.checkbox-container label {
-  
-    font-size: 7.5px;
-}
-  
 
 
 .signup-btn {

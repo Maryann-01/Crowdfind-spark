@@ -21,23 +21,23 @@
 
         <form (ngSubmit)="onSubmit()">
           <label class="mend">Email</label>
-          <input class="log" type="email" placeholder="Enter Your Email Address Here" [(ngModel)]="email" name="email" />
+          <input style="font-size:11px;" class="log" type="email" placeholder="Enter Your Email Address Here" [(ngModel)]="email" name="email" />
   
           <label class="mend">Password</label>
-          <input class="log" type="password" placeholder="Enter Password Here" [(ngModel)]="password" name="password" />
+          <input class="log" style="font-size:11px;" type="password" placeholder="Enter Password Here" [(ngModel)]="password" name="password" />
   
           <div class="checkbox-container d-flex justify-space-between align-items-center">
             <div class="checkbox-rm d-flex align-items-center">
               <input type="checkbox" id="remember-me" [(ngModel)]="rememberMe" name="rememberMe" />
-              <p class="" >Remember me</p>
+              <p style="font-size:10px;">Remember me</p>
             </div>
-            <a [routerLink]="'/forgot-password'" class="forgot-password" style="font-size:12px;">Forgot Password?</a>
+            <a [routerLink]="'/forgot-password'" class="forgot-password" style="font-size:10px;">Forgot Password?</a>
           </div>
   
           <button type="submit" class="signup-btn">Login</button>
         </form>
         
-        <span style="font-size:10px;">Don't have an Account? <a [routerLink]="'/signup'"  style="font-size:10px;">Sign Up</a></span>
+        <span style="font-size:10px;">Don't have an Account? <a [routerLink]="'/signup'"  style="font-size:11px;text-decoration: none">Sign Up</a></span>
       </div>
     </div>
   </div>

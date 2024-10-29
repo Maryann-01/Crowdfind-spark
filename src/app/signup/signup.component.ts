@@ -13,7 +13,7 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-  name:string="";
+  name: string = '';
   email: string = '';
   password: string = '';
   confirmPassword: string = '';
@@ -25,10 +25,9 @@ export class SignupComponent {
   onSubmit(event: Event): void {
     event.preventDefault();
 
-    
     if (this.password === this.confirmPassword && this.termsAccepted) {
       const registerData = {
-        name:this.name,
+        name: this.name,
         email: this.email,
         password: this.password
       };
@@ -39,6 +38,7 @@ export class SignupComponent {
             console.log('Registration successful', response);
             this.showSuccessModal = true;
 
+            // Auto-close the modal after 3 seconds and redirect to login
             setTimeout(() => {
               this.closeModal();
               this.router.navigate(['/login']); 
