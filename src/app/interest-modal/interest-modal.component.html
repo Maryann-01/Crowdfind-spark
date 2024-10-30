@@ -39,8 +39,8 @@
       </form>
     </div>
 
-    <div *ngIf="showSuccessModal" class="success-modal">
-      <img src="assets/images/success image.png" alt="success image"/>
+    <div *ngIf="showSuccessModal" class="success-modal d-flex align-items-center flex-column">
+      <img src="assets/images/success image.png" alt="success image" style="width:100px;height:100px"/>
       <p style="text-align: center;">Event has been Booked Successfully</p>
       <p style="text-align: center;">Kindly check your mail for your ticket and other Information</p>
       <a style="color: #FF5722;text-decoration: none;text-align: center;" (click)="closeSuccessModal()" [routerLink]="['/home']" class="home-link">Click here to go back to Home</a>

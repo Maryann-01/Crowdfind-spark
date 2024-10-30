@@ -21,7 +21,7 @@ export class FeaturedEventsComponent implements OnInit {
   constructor(
     private router: Router, 
     private eventService: EventService,
-    private clipboard: Clipboard // Inject the Clipboard service
+    private clipboard: Clipboard 
   ) {}
 
   ngOnInit(): void {

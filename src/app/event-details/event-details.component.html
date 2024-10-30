@@ -1,6 +1,7 @@
 <app-navbar></app-navbar>
+
 <section class="myEventDetails mt-4 mb-2">
-    <div class="event-details-container" *ngIf="event"> 
+    <div class="event-details-container" *ngIf="event">
         <div class="card event-card-large">
             <div class="event-img-container">
                 <img [src]="event.img" alt="{{ event.title }}" class="event-img-large" />
@@ -13,7 +14,7 @@
                         (click)="toggleLike()" 
                         style="cursor: pointer;"
                     />
-                    <img src="assets/images/Share 1.png" alt="share event" />
+                    <img src="assets/images/Share 1.png" alt="share event" (click)="copyEventLink()" />
                 </div>
                 <div class="d-flex align-items-center justify-content-between">
                     <p class="card-text"><span class="card-body-desc">Theme:</span> {{ event.title }}</p>
@@ -25,9 +26,9 @@
                 </div>
                 <p class="card-text"><span class="card-body-desc">Tags:</span> {{ event.tags.join(', ') }}</p>
                 <p class="card-text"><span class="card-body-desc">Description:</span> {{ event.description }}</p>
-                
+
                 <div class="button-group">
-                    <button class="interest-btn" (click)="openModal()">Indicate Interest</button> <!-- Updated to open modal -->
+                    <button class="interest-btn" (click)="openModal()">Indicate Interest</button>
                     <button class="not-interested-btn">Not Interested</button>
                 </div>
             </div>
@@ -39,14 +40,12 @@
     </div>
 </section>
 
-<!-- Assuming this is in the parent component template -->
 <app-interest-modal
   *ngIf="showModal"
   [showModal]="showModal"
   [eventId]="selectedEventId"
   (closeModal)="closeModal()">
 </app-interest-modal>
-
 
 <app-stay-updated></app-stay-updated>
 <app-footer></app-footer>

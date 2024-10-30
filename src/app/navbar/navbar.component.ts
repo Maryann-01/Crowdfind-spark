@@ -31,9 +31,9 @@ export class NavbarComponent {
     if (this.isLoggedIn) {
       this.authService.logout();
       this.isLoggedIn = false;
+      this.router.navigate(['/home']); // Navigate to the homepage after logging out
     } else {
-      // Here, you might want to redirect to the login page
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login']); // Navigate to the login page if not logged in
     }
   }
 
