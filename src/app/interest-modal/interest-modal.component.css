@@ -12,13 +12,13 @@
   display: flex; 
   justify-content: center; 
   align-items: center; 
-  padding-top: 85px;
+  padding-top: 88px;
  
 }
 .modal-info-box{
   border: 1px solid #000000;
   padding:2px;
-  width: 50%;
+  width: 70%;
   margin:10px auto;
 }
 .modal-info-box p{
@@ -33,7 +33,7 @@ font-weight: 400;
   padding: 15px;
   border: 1px solid #888; 
   border-radius: 8px; 
-  width: 800px;
+  width: 650px;
 }
 
 
@@ -62,7 +62,7 @@ font-weight: 400;
 
 form {
   gap:2vh; 
-  width: 50%;
+  width: 70%;
   margin:0 auto; 
 }
 
@@ -93,5 +93,9 @@ button {
   width:100%;
 }
 .checkbox-field{
-  gap:1vw;
+  display:flex;
+
+}
+.checkbox-field p{
+  font-size:13px;
 }

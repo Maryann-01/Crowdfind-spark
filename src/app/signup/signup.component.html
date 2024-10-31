@@ -9,7 +9,7 @@
   <div class="right-section">
     <div class="form-container">
       <h2>Welcome to CrowdFind!</h2>
-      <p>Please, Create an account to access our features</p>
+      <p style="font-size:14px;">Please, Create an account to access our features</p>
 
       <button class="google-signup">
         <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo" />
@@ -34,15 +34,15 @@
 
         <div class="checkbox-container">
           <input type="checkbox" id="terms" [(ngModel)]="termsAccepted" name="terms" required />
-          <p class="cont">
+          <p class="cont" style="font-size:11px;width:78%">
             I have read and agree to the <span class="tnC">Terms and Conditions</span> of CrowdFind
           </p>
         </div>
 
-        <button type="submit" class="signup-btn">Create Account</button>
+        <button type="submit" class="signup-btn" >Create Account</button>
       </form>
 
-      <span style="font-size:11px;">Have an Account? <a [routerLink]="['/login']">Login</a></span>
+      <span style="font-size:13px;">Have an Account? <a style="font-size:13px;margin-left:3px;text-decoration: none" [routerLink]="['/login']">Login</a></span>
     </div>
   </div>
 </div>
