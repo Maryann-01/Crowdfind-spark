@@ -3,8 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { AuthService } from '../services/auth.services'; // Ensure this import is correct
-
+import { AuthService } from '../services/auth.services';
 @Component({
   selector: 'app-login',
   standalone: true,
@@ -25,7 +24,7 @@ export class LoginComponent {
       .subscribe({
         next: (response) => {
           this.authService.login(response.token);  
-          this.router.navigate(['/home']);  
+          this.router.navigate(['/dashboard/dashboardhome']);  
         },
         error: (error) => {
           console.error("Login failed", error);

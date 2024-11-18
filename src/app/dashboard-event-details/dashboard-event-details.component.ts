@@ -1,13 +1,10 @@
+
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common'; // Import CommonModule
 import { ActivatedRoute } from '@angular/router';
 import { Clipboard } from '@angular/cdk/clipboard';
-import { EventService } from '../services/event.service';
-import { FooterComponent } from '../footer/footer.component';
-import { StayUpdatedComponent } from '../stay-updated/stay-updated.component';
-import { NavbarComponent } from '../navbar/navbar.component';
 import { InterestModalComponent } from '../interest-modal/interest-modal.component'; 
-import { DashboardComponent } from '../dashboard/dashboard.component';
+import { EventService } from '../services/event.service';
 interface Event {
   _id: string;
   title: string;
@@ -18,15 +15,14 @@ interface Event {
   description: string;
   tags: string[];
 }
-
 @Component({
-  selector: 'app-event-details',
+  selector: 'app-dashboard-event-details',
   standalone: true,
-  imports: [CommonModule,DashboardComponent, FooterComponent, StayUpdatedComponent, NavbarComponent, InterestModalComponent],
-  templateUrl: './event-details.component.html',
-  styleUrls: ['./event-details.component.css']
+  imports: [CommonModule,InterestModalComponent],
+  templateUrl: './dashboard-event-details.component.html',
+  styleUrl: './dashboard-event-details.component.css'
 })
-export class EventDetailsComponent implements OnInit {
+export class DashboardEventDetailsComponent implements OnInit {
   event: Event | undefined;
   showModal: boolean = false;
   selectedEventId: string = '';
@@ -80,7 +76,7 @@ export class EventDetailsComponent implements OnInit {
 
   copyEventLink(): void {
     if (this.event) {
-      const eventUrl = `${window.location.origin}/event-details/${this.event._id}`;
+      const eventUrl = `${window.location.origin}/dashboard/dashboard-event-details/${this.event._id}`;
       this.clipboard.copy(eventUrl);
       console.log('Event link copied to clipboard:', eventUrl);
       alert('Event link copied to clipboard!');

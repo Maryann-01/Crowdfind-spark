@@ -36,7 +36,6 @@ export class NavbarComponent {
       this.router.navigate(['/login']); // Navigate to the login page if not logged in
     }
   }
-
   onSearch(): void {
     if (this.searchQuery.length > 0) {
       this.eventService.getEvents().subscribe({
@@ -56,14 +55,16 @@ export class NavbarComponent {
       this.showDropdown = false;
     }
   }
-
+  
   onSelectEvent(eventId: string | undefined): void {
+    console.log('Event selected:', eventId);
     if (eventId) {
       this.searchQuery = '';
       this.showDropdown = false;
-      this.router.navigate(['/event-details', eventId]);
+      this.router.navigate(['/event-details', eventId]); 
     }
   }
+  
 
   @HostListener('document:click', ['$event'])
   onClickOutside(event: MouseEvent): void {

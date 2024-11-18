@@ -2,24 +2,22 @@
   width: 100%;
   padding: 0;
   display: flex;
-  flex-direction: column; /* Changed to column */
-  align-items: center;    /* Center items horizontally */
+  flex-direction: column;
+  align-items: center;
 }
 
 .event-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); 
-  grid-gap: 3rem; 
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 3rem;
   padding: 1rem;
 }
 
 .event-card {
-  display: flex;
-  flex-direction: column;
+  max-width: 300px;
   background-color: #fff;
   border: 1px solid #9A9A99;
   border-radius: 8px;
-  max-width: 300px;
   padding: 1em;
 }
 
@@ -63,6 +61,18 @@
   padding: 0.5em;
   outline: none;
 }
-.explore-more-btn{
-  width:300px;
+
+.explore-more-btn {
+  width: 300px;
+}
+
+/* Skeleton loader styles */
+ngx-skeleton-loader {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #e0e0e0;
+  border: 1px solid #9A9A99;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }

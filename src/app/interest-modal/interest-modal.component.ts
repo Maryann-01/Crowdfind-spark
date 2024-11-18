@@ -15,7 +15,7 @@ import { RouterModule } from '@angular/router';
 })
 export class InterestModalComponent {
   @Input() showModal: boolean = false;
-  @Input() eventId!: string; // Ensure this is passed from the parent component
+  @Input() eventId!: string; 
   @Output() closeModal: EventEmitter<void> = new EventEmitter();
 
   email: string = '';
@@ -27,11 +27,11 @@ export class InterestModalComponent {
 
   constructor(
     private eventService: EventService,
-    private authService: AuthService // Use AuthService
+    private authService: AuthService 
   ) {}
 
   onSubmit(): void {
-    const token = this.authService.getToken(); // Get token from AuthService
+    const token = this.authService.getToken(); 
     // console.log(token  , "1")
 
     if (!token) {

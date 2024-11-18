@@ -1,23 +1,18 @@
 import { Component, OnInit } from '@angular/core';
-import { NavbarComponent } from '../navbar/navbar.component';
 import { EventService } from '../services/event.service';
 import { Router } from '@angular/router'; 
 import { Clipboard } from '@angular/cdk/clipboard';
 import { CommonModule } from '@angular/common';
-import { FooterComponent } from '../footer/footer.component';
-import { StayUpdatedComponent } from '../stay-updated/stay-updated.component';
-import { HomeInfoSharedComponent } from '../home-info-shared/home-info-shared.component';
-
+import { DashboardComponent } from '../dashboard/dashboard.component';
 @Component({
-  selector: 'app-events',
+  selector: 'app-dashboard-events',
   standalone: true,
-  imports: [HomeInfoSharedComponent, FooterComponent, CommonModule, StayUpdatedComponent, NavbarComponent],
-  templateUrl: './events.component.html',
-  styleUrls: ['./events.component.css']
+  imports: [ CommonModule],
+  templateUrl: './dashboard-events.component.html',
+  styleUrl: './dashboard-events.component.css'
 })
-export class EventsComponent implements OnInit {
+export class DashboardEventsComponent implements OnInit{
   events: any[] = [];
-
   constructor(
     private router: Router, 
     private eventService: EventService,
@@ -38,11 +33,11 @@ export class EventsComponent implements OnInit {
   }
 
   viewEventDetails(event: any): void {
-    this.router.navigate(['/event-details', event._id]); 
+    this.router.navigate(['/dashboard/dashboard-event-details', event._id]); 
   }
   
   shareEventLink(event: any): void {
-    const eventUrl = `${window.location.origin}/event-details/${event._id}`;
+    const eventUrl = `${window.location.origin}/dashboard/dashboard-event-details/${event._id}`;
     this.clipboard.copy(eventUrl);
     console.log('Event link copied to clipboard:', eventUrl);
     alert('Event link copied to clipboard!');

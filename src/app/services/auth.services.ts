@@ -12,18 +12,18 @@ export class AuthService {
 
   login(token: string): void {
     if (this.isBrowser) {
-      localStorage.setItem('jwt_token', token); // Store the token in local storage
+      localStorage.setItem('jwt_token', token);
     }
   }
 
   logout(): void {
     if (this.isBrowser) {
-      localStorage.removeItem('jwt_token'); // Remove the token from local storage
+      localStorage.removeItem('jwt_token');
     }
   }
 
   get loggedIn(): boolean {
-    return this.isBrowser && !!localStorage.getItem('jwt_token'); // Check local storage directly
+    return this.isBrowser && !!localStorage.getItem('jwt_token');
   }
 
   getToken(): string | null {
