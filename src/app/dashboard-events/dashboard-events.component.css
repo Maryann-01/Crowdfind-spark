@@ -1,6 +1,6 @@
 .dashboard-container {
     display: flex;
-    gap: 20px; /* Space between dashboard and events section */
+    gap: 20px; 
   }
   *{
     margin:0;
@@ -16,26 +16,14 @@
     flex-direction: column;
 }
 .trend-event-img{
-    /* width: 450px; */
-/* height: 386.42px; */
 object-fit: contain;
-/* border:2px solid red; */
-/* border-radius: 4px 0px 0px 0px; */
 }
 
 
-
-.event-container {
-    width: 100%;
-    padding: 0;
-    display:flex;
-    align-items: center;
-    justify-content: center;
-  }
   
   .event-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); 
+    grid-template-columns: repeat(4, 1fr); 
     grid-gap: 2rem; 
     padding: 1rem;
     
@@ -86,3 +74,33 @@ width:100%;
 border-radius:2px;
 padding:0.5em;
 }
+.see-more-text {
+  color: #FF5722; 
+  cursor: pointer; 
+  margin-left: 1em; 
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1em;
+}
+
+  .event-card {
+    /* max-width: 300px; */
+    background-color: #fff;
+    border: 1px solid #9A9A99;
+    border-radius: 8px;
+    padding: 1em;
+  }
+  .event-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
+    gap: 1em; 
+    width: 100%;
+    justify-content: center; 
+  }

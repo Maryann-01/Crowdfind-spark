@@ -6,7 +6,13 @@
     border-radius: 8px;
     padding: 1em;
   }
-  
+  .event-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
+    gap: 1em; 
+    width: 100%;
+    justify-content: center; 
+  }
   .card {
     border: none;
   }
@@ -48,14 +54,11 @@
     outline: none;
   }
   
-  .explore-more-btn {
-    /* width: 300px; */
-  }
+  
   .see-more-text {
-    color: #FF5722; /* Link-like color */
-    cursor: pointer; /* Pointer cursor to indicate interactivity */
-
-    margin-left: 1em; /* Space between "Upcoming Events" and "See More" */
+    color: #FF5722; 
+    cursor: pointer; 
+    margin-left: 1em; 
     font-size: 1rem;
     font-weight: bold;
   }
@@ -75,13 +78,7 @@
     width: 100%;
   } */
   
-  .event-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); 
-    gap: 1em; 
-    width: 100%;
-    justify-content: center; 
-  }
+ 
   
   /* .event-card {
     background-color: #fff;

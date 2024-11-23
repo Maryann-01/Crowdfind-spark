@@ -3,16 +3,21 @@ import { EventService } from '../services/event.service';
 import { Router } from '@angular/router'; 
 import { Clipboard } from '@angular/cdk/clipboard';
 import { CommonModule } from '@angular/common';
-import { DashboardComponent } from '../dashboard/dashboard.component';
+import { StayUpdatedComponent } from '../stay-updated/stay-updated.component';
 @Component({
   selector: 'app-dashboard-events',
   standalone: true,
-  imports: [ CommonModule],
+  imports: [ CommonModule, StayUpdatedComponent],
   templateUrl: './dashboard-events.component.html',
   styleUrl: './dashboard-events.component.css'
 })
 export class DashboardEventsComponent implements OnInit{
-  events: any[] = [];
+  events: any[] = []; 
+  displayedEvents: any[] = [];
+  increment: number = 5; 
+  startIndex: number = 0; 
+  loading: boolean = true;
+  
   constructor(
     private router: Router, 
     private eventService: EventService,
@@ -50,5 +55,10 @@ export class DashboardEventsComponent implements OnInit{
     }).catch((error) => {
       console.error('Failed to copy event link:', error);
     });
+  }
+  loadMore(): void {
+    const moreEvents = this.events.slice(this.startIndex, this.startIndex + this.increment);
+    this.displayedEvents = [...this.displayedEvents, ...moreEvents];
+    this.startIndex += this.increment; // Update the starting index
   }
 }

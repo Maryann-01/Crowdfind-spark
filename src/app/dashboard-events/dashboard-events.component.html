@@ -1,10 +1,13 @@
-<div class="dashboard-container">
+<div class="dashboard-container d-flex flex-column">
   <!-- <app-dashboard></app-dashboard> -->
   <section class="myEvents mt-4 mb-2">
-      <h2>Trending Events</h2>
-      <div class="event-container mt-4">
+      <div class="header d-flex justify-space-between align-items-center">
+        <h2>Trending Events</h2>
+        <p class="see-more-text" (click)="loadMore()">See More</p>
+      </div>
+      <div class="event-container">
         <div class="event-grid">
-          <div *ngFor="let event of events | slice:0:12" class="event-card">
+          <div *ngFor="let event of events | slice:0:4" class="event-card">
             <div class="card h-100">
               <img [src]="event.img" class="card-img-top trend-event-img" alt="{{ event.title }}" style="height: 200px; object-fit: cover;">
               
@@ -26,10 +29,13 @@
     </section>
     
     <section class="myEvents mt-4 mb-2">
-      <h2>Events Near Me</h2>
+      <div class="header d-flex justify-space-between align-items-center">
+        <h2>Events Near Me</h2>
+        <p class="see-more-text" (click)="loadMore()">See More</p>
+      </div>
       <div class="event-container mt-4">
         <div class="event-grid">
-          <div *ngFor="let event of events | slice:0:12" class="event-card">
+          <div *ngFor="let event of events | slice:0:4" class="event-card">
             <div class="card h-100">
               <img [src]="event.img" class="card-img-top trend-event-img" alt="{{ event.title }}" style="height: 200px; object-fit: cover;">
                 
@@ -59,4 +65,5 @@
 
 
 </div>
+<app-stay-updated></app-stay-updated>
 
