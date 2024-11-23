@@ -25,8 +25,8 @@ export const routes: Routes = [
   { path: 'login', component: LoginComponent },
   {path:"signup", component:SignupComponent},
   { path: 'event-details/:id', component: EventDetailsComponent },
-  // { path: '', redirectTo: '/home', pathMatch: 'full' },  
-  // { path: '**', redirectTo: '/home' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },  
+  { path: '**', redirectTo: '/home' },
   
 ];
 

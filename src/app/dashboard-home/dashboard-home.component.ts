@@ -8,7 +8,7 @@ import { EventService } from '../services/event.service';
 @Component({
   selector: 'app-dashboard-home',
   standalone: true,
-  imports: [DashboardComponent,StayUpdatedComponent, CommonModule],
+  imports: [StayUpdatedComponent, CommonModule],
   templateUrl: './dashboard-home.component.html',
   styleUrl: './dashboard-home.component.css'
 })

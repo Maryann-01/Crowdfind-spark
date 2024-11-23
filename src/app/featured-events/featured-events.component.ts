@@ -9,7 +9,7 @@ import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 @Component({
   selector: 'app-featured-events',
   standalone: true,
-  imports: [CommonModule, StayUpdatedComponent, NgxSkeletonLoaderModule], 
+  imports: [CommonModule,  NgxSkeletonLoaderModule], 
   templateUrl: './featured-events.component.html',
   styleUrls: ['./featured-events.component.css']
 })

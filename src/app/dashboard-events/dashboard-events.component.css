@@ -7,9 +7,7 @@
     padding:0;
     box-sizing: border-box;
 }
-.event-comp{
-    /* width:100vw; */
-}
+
 .myEvents{
     /* width:100%; */
     display:flex;

@@ -1,26 +1,31 @@
 <!-- <app-dashboard></app-dashboard> -->
-<section>
+<section class="dashboard-profile">
     <img src="" alt="current profile picture"/>
     <p>Cuerrent Location</p>
-    <button>Edit Profile Here</button>
-    <form>
+    <button class="prof-btn">Edit Profile Here</button>
+    <form class="prof-form">
         <div>
-            <label>Full Name</label>
-            <input type="text" value="name"/>
+            <label class="profile-formlabel">Full Name</label>
+            <input type="text" name="name"/>
         </div>
         <div>
-            <label>Email</label>
-            <input type="email" value="mail"/>
+            <label class="profile-formlabel">Email</label>
+            <input type="email" name="mail"/>
         </div>
         <div>
-            <label>Location</label>
-            <input type="text" value="name"/>
+            <label class="profile-formlabel">Location</label>
+            <input type="text" name="name"/>
         </div>
         <div>
-            <label>Password</label>
-            <input type="Pwrd" value="name"/>
+            <label class="profile-formlabel">Password</label>
+            <input type="password" name="name"/>
         </div>
+        
+        <button class="saveChanges">Save Changes</button>
+       
+      
     </form>
-    <app-stay-updated></app-stay-updated>
+    
 </section>
+<app-stay-updated></app-stay-updated>
 

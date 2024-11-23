@@ -22,7 +22,7 @@ interface Event {
 @Component({
   selector: 'app-event-details',
   standalone: true,
-  imports: [CommonModule,DashboardComponent, FooterComponent, StayUpdatedComponent, NavbarComponent, InterestModalComponent],
+  imports: [CommonModule, FooterComponent, StayUpdatedComponent, NavbarComponent, InterestModalComponent],
   templateUrl: './event-details.component.html',
   styleUrls: ['./event-details.component.css']
 })

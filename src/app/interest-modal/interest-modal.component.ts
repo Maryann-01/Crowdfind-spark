@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 @Component({
   selector: 'app-interest-modal',
   standalone: true,
-  imports: [CommonModule, FormsModule, HomeComponent, RouterModule],
+  imports: [CommonModule, FormsModule,  RouterModule],
   templateUrl: './interest-modal.component.html',
   styleUrls: ['./interest-modal.component.css']
 })
