@@ -5,6 +5,14 @@ import { CommonModule } from '@angular/common';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { StayUpdatedComponent } from '../stay-updated/stay-updated.component';
 import { EventService } from '../services/event.service';
+import { AuthService } from '../services/auth.services';
+import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+interface Event {
+  _id: string;
+  liked?: boolean;
+}
+
 @Component({
   selector: 'app-dashboard-home',
   standalone: true,
@@ -12,18 +20,22 @@ import { EventService } from '../services/event.service';
   templateUrl: './dashboard-home.component.html',
   styleUrl: './dashboard-home.component.css'
 })
-export class DashboardHomeComponent{
+export class DashboardHomeComponent implements OnInit{
   events: any[] = []; 
   displayedEvents: any[] = [];
   increment: number = 5; 
   startIndex: number = 0; 
   loading: boolean = true;
-
+  
+  
   constructor(
     private router: Router, 
     private eventService: EventService,
-    private clipboard: Clipboard 
+    private clipboard: Clipboard ,
+    private http: HttpClient,
+    private authService: AuthService 
   ) {}
+ 
   ngOnInit(): void {
     this.fetchEvents();
   }
@@ -41,10 +53,64 @@ export class DashboardHomeComponent{
     this.router.navigate(['dashboard/dashboard-event-details', event._id]); 
   }
 
-  toggleLike(event: any): void {
-    event.liked = !event.liked;
-    console.log('Event liked status:', event.liked);
+  toggleLike(event: Event): void {
+    if (!event || !event._id) {
+      console.error('Invalid event object.');
+      return;
+    }
+  
+    if (!event.liked) {
+      this.saveEvent(event._id).subscribe({
+        next: (response) => {
+          console.log(response.message);
+          event.liked = true;
+        },
+        error: (error) => {
+          console.error('Failed to save event:', error);
+        },
+        complete: () => {
+          console.log('Save event completed.');
+        },
+      });
+    } else {
+      console.log('Event is already liked.');
+    }
   }
+  
+  saveEvent(eventId: string) {
+    const url = `https://crowdfind-backend.onrender.com/api/auth/save-event/${eventId}`;
+    const token = this.authService.getToken();
+  
+    if (!token) {
+      console.error('User is not authenticated. Cannot save event.');
+      alert('Please log in to save events.');
+      
+      // Return an observable that emits an error
+      return new Observable<{ message: string }>((observer) => {
+        observer.error('User is not authenticated');
+        observer.complete();
+      });
+    }
+  
+    const headers = { Authorization: `Bearer ${token}` };
+    return this.http.post<{ message: string }>(url, {}, { headers });
+  }
+  
+
+  // saveEvent(eventId: string) {
+  //   const url = `https://crowdfind-backend.onrender.com/api/auth/save-event/${eventId}`;
+  //   const token = this.authService.getToken();
+  
+  //   if (!token) {
+  //     console.error('User is not authenticated. Cannot save event.');
+  //     alert('Please log in to save events.');
+  //     return;
+  //   }
+  
+  //   const headers = { Authorization: `Bearer ${token}` };
+  //   return this.http.post<{ message: string }>(url, {}, { headers });
+  // }
+  
 
   shareEventLink(event: any): void {
     const eventUrl = `${window.location.origin}/dashboard/dashboard-event-details/${event._id}`;
@@ -53,15 +119,11 @@ export class DashboardHomeComponent{
     alert('Event link copied to clipboard!');
   }
 
-  // loadMore(): void {
-  //   this.startIndex += this.increment;
-  //   const moreEvents = this.events.slice(this.startIndex, this.startIndex + this.increment);
-  //   this.displayedEvents = [...this.displayedEvents, ...moreEvents];
-  // }
+ 
   loadMore(): void {
     const moreEvents = this.events.slice(this.startIndex, this.startIndex + this.increment);
     this.displayedEvents = [...this.displayedEvents, ...moreEvents];
-    this.startIndex += this.increment; // Update the starting index
+    this.startIndex += this.increment; 
   }
   
 }
