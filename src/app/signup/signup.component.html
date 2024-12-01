@@ -33,16 +33,16 @@
         <input class="log" type="password" placeholder="Confirm Password Here" required [(ngModel)]="confirmPassword" name="confirmPassword" />
 
         <div class="checkbox-container">
-          <input type="checkbox" id="terms" [(ngModel)]="termsAccepted" name="terms" required />
-          <p class="cont">
+          <input class="check" type="checkbox" id="terms" [(ngModel)]="termsAccepted" name="terms" required />
+          <label class="cont">
             I have read and agree to the <span class="tnC">Terms and Conditions</span> of CrowdFind
-          </p>
+          </label>
         </div>
 
         <button type="submit" class="signup-btn">Create Account</button>
       </form>
 
-      <span style="font-size:11px;">Have an Account? <a [routerLink]="['/login']">Login</a></span>
+      <span class="pos" style="font-size:12px;">Have an Account? <a [routerLink]="['/login']">Login</a></span>
     </div>
   </div>
 </div>

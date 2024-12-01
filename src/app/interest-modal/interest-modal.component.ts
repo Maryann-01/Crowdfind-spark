@@ -32,12 +32,14 @@ export class InterestModalComponent {
 
   onSubmit(): void {
     const token = this.authService.getToken(); // Get token from AuthService
+    // console.log(token  , "1")
 
     if (!token) {
       alert('User is not authenticated. Please log in.');
       return;
+     
     }
-
+    // console.log(token  , "2")
     if (!this.eventId) {  // Check if eventId is set
       alert('Event ID is missing. Please try again.');
       return;
