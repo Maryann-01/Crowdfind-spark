@@ -8,7 +8,7 @@ import { FeaturedEventsComponent } from '../featured-events/featured-events.comp
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [NavbarComponent,HomeInfoComponent,FooterComponent,StayUpdatedComponent,FeaturedEventsComponent],
+  imports: [NavbarComponent,HomeInfoComponent,FooterComponent,StayUpdatedComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
