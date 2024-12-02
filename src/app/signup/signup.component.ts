@@ -50,11 +50,11 @@ export class SignupComponent {
           },
           error: (error) => {
             console.error("Registration failed", error);
-            alert('Registration failed. Please try again.');
+            // alert('Registration failed. Please try again.');
           }
         });
     } else {
-      alert('Please make sure passwords match and terms are accepted.');
+      // alert('Please make sure passwords match and terms are accepted.');
     }
   }
 
