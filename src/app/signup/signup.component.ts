@@ -39,8 +39,6 @@ export class SignupComponent {
           next: (response: any) => {
             console.log('Registration successful', response);
             this.showSuccessModal = true;
-
-            
             localStorage.setItem('firstName', firstName);
 
             setTimeout(() => {

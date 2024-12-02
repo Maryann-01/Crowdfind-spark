@@ -23,18 +23,18 @@ export class LoginComponent {
     this.http.post<{ token: string }>('https://crowdfind-backend.onrender.com/api/auth/login', loginData)
       .subscribe({
         next: (response) => {
-
+          // Save token in AuthService or localStorage
           this.authService.login(response.token);
   
-          
-          this.http.get<{ name: string }>('https://crowdfind-backend.onrender.com/api/auth/me', {
+          // Fetch user details
+          this.http.get<{ name: string }>('https://crowdfind-backend.onrender.com/api/auth/login', {
             headers: {
               Authorization: `Bearer ${response.token}`,
             }
           }).subscribe({
             next: (userData) => {
-              const firstName = userData.name.split(' ')[0]; 
-              localStorage.setItem('firstName', firstName); 
+              const firstName = userData.name.split(' ')[0]; // Extract first name
+              localStorage.setItem('firstName', firstName); // Save it locally
               this.router.navigate(['/dashboard/dashboardhome']); 
             },
             error: (error) => {
