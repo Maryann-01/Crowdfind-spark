@@ -76,3 +76,23 @@ ngx-skeleton-loader {
   border-radius: 8px;
   margin-bottom: 20px;
 }
+
+@media(max-width:480px){
+  .event-container{
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+  }
+  .card-h{
+    display: flex;
+    flex-direction: column;
+  }
+  .save-share-icon{
+    display: flex;
+    width: 90vw;
+    flex-direction: column;
+    flex-wrap:wrap;
+    flex-grow: inherit;
+  }
+
+}
