@@ -50,7 +50,7 @@ export class DashboardHomeComponent implements OnInit{
   }
 
   viewEventDetails(event: any): void {
-    this.router.navigate(['dashboard/dashboard-event-details', event._id]); 
+    this.router.navigate(['dashboard/event-details', event._id]); 
   }
 
   toggleLike(event: Event): void {
@@ -113,7 +113,7 @@ export class DashboardHomeComponent implements OnInit{
   
 
   shareEventLink(event: any): void {
-    const eventUrl = `${window.location.origin}/dashboard/dashboard-event-details/${event._id}`;
+    const eventUrl = `${window.location.origin}/dashboard/event-details/${event._id}`;
     this.clipboard.copy(eventUrl);
     console.log('Event link copied to clipboard:', eventUrl);
     alert('Event link copied to clipboard!');

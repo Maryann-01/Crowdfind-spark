@@ -99,3 +99,17 @@ button {
 .checkbox-field p{
   font-size:13px;
 }
+.error-border {
+  border: 1px solid red !important;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+
+
+
+

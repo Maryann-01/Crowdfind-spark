@@ -3,19 +3,18 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { EventService } from '../services/event.service';
 import { AuthService } from '../services/auth.services';
-import { HomeComponent } from '../home/home.component';
 import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-interest-modal',
   standalone: true,
-  imports: [CommonModule, FormsModule,  RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './interest-modal.component.html',
   styleUrls: ['./interest-modal.component.css']
 })
 export class InterestModalComponent {
   @Input() showModal: boolean = false;
-  @Input() eventId!: string; 
+  @Input() eventId!: string;
   @Output() closeModal: EventEmitter<void> = new EventEmitter();
 
   email: string = '';
@@ -24,24 +23,29 @@ export class InterestModalComponent {
   numberOfAttendees: number = 1;
   agreeToEmails: boolean = false;
   showSuccessModal: boolean = false;
+  submitted: boolean = false; 
 
   constructor(
     private eventService: EventService,
-    private authService: AuthService 
+    private authService: AuthService
   ) {}
 
   onSubmit(): void {
-    const token = this.authService.getToken(); 
-    // console.log(token  , "1")
+    this.submitted = true; 
 
-    if (!token) {
-      alert('User is not authenticated. Please log in.');
+   
+    if (!this.email || !this.fullName || !this.phoneNumber || !this.numberOfAttendees || !this.agreeToEmails) {
+      // If any required field is empty, do not submit the form
       return;
-     
     }
-    // console.log(token  , "2")
-    if (!this.eventId) {  // Check if eventId is set
-      alert('Event ID is missing. Please try again.');
+
+    const token = this.authService.getToken(); 
+    if (!token) {
+      return;
+    }
+
+    if (!this.eventId) {  
+      
       return;
     }
 
@@ -52,11 +56,6 @@ export class InterestModalComponent {
       },
       error: (error) => {
         console.error('Error booking the event:', error);
-        if (error.status === 401) {
-          alert('Unauthorized: Please log in again.');
-        } else {
-          alert('There was an error booking the event. Please try again later.');
-        }
       }
     });
   }

@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component ,OnInit} from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ProfileService } from '../services/profile.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,6 +9,15 @@ import { RouterModule } from '@angular/router';
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
+  profilePicture: string = 'assets/images/user-profile.png'; // Default image
 
+  constructor(private profileService: ProfileService) {}
+
+  ngOnInit(): void {
+    
+    this.profileService.profilePicture$.subscribe((newProfilePicture) => {
+      this.profilePicture = newProfilePicture;
+    });
+  }
 }

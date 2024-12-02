@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { UserProfileService } from '../services/user-profile.service'; // Import the service
+import { ProfileService } from '../services/profile.service';
 import { StayUpdatedComponent } from '../stay-updated/stay-updated.component';
 import { AuthService } from '../services/auth.services';
 
@@ -31,8 +31,8 @@ export class DashboardProfileComponent implements OnInit {
 
   constructor(
     private http: HttpClient,
-    private userProfileService: UserProfileService, // Inject the service
-    private authService: AuthService // Inject AuthService for token
+    private profileService: ProfileService,
+    private authService: AuthService 
   ) {}
 
   ngOnInit(): void {
@@ -52,6 +52,7 @@ export class DashboardProfileComponent implements OnInit {
             this.user = response;
             this.userLocation=response.address
            this.profilePicture = response.profilePicture || 'assets/images/user-profile.png'; // Default to placeholder image if none
+           this.profileService.setProfilePicture(this.profilePicture);
           },
           error: (error) => {
             console.error('Profile fetch failed:', error);
@@ -72,7 +73,7 @@ export class DashboardProfileComponent implements OnInit {
     if (file) {
       const formData = new FormData();
       formData.append('profilePicture', file);
-      const token = this.authService.getToken();  // Get token from auth service
+      const token = this.authService.getToken();  
       const headers = new HttpHeaders({
         'Authorization': `Bearer ${token}`,
       });
@@ -82,7 +83,7 @@ export class DashboardProfileComponent implements OnInit {
           next: (response) => {
             const newImageUrl = response.profilePicture;
             this.profilePicture = newImageUrl; 
-            this.userProfileService.setProfilePicture(newImageUrl); 
+            this.profileService.setProfilePicture(newImageUrl);
           },
           error: (error) => {
             console.error('Image upload failed:', error);
