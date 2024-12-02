@@ -11,7 +11,7 @@ import { ProfileService } from '../services/profile.service';
 })
 export class DashboardComponent implements OnInit {
   profilePicture: string = 'assets/images/user-profile.png'; // Default image
-
+  firstName: string = 'Jessica';
   constructor(private profileService: ProfileService) {}
 
   ngOnInit(): void {

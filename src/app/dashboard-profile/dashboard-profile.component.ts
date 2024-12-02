@@ -97,6 +97,7 @@ export class DashboardProfileComponent implements OnInit {
   }
 
   updateProfile(): void {
+    const updatedFirstName = this.user.name.split(' ')[0];
     const updatedUserData = {
       name: this.user.name,
       email: this.user.email,
@@ -113,6 +114,8 @@ export class DashboardProfileComponent implements OnInit {
       .subscribe({
         next: (response) => {
           console.log('Profile updated successfully', response);
+          localStorage.setItem('firstName', updatedFirstName);
+          
         },
         error: (error) => {
           console.error('Profile update failed:', error);

@@ -27,7 +27,7 @@ export class DashboardHomeComponent implements OnInit{
   startIndex: number = 0; 
   loading: boolean = true;
   
-  
+  firstName: string | null = '';
   constructor(
     private router: Router, 
     private eventService: EventService,
@@ -38,8 +38,11 @@ export class DashboardHomeComponent implements OnInit{
  
   ngOnInit(): void {
     this.fetchEvents();
+    this.fetchFirstName();
   }
-
+  fetchFirstName(): void {
+    this.firstName = localStorage.getItem('firstName');
+  }
   fetchEvents(): void {
     this.loading = true; 
     this.eventService.getEvents().subscribe((data) => {
