@@ -1,23 +1,11 @@
 <nav class="navbar navbar-expand-lg navbar-light">
   <div class="container-fluid">
     <div class="d-flex align-items-center logo-div">
-      <img
-        src="assets/images/Crowdfund-logo.png"
-        class="me-2"
-        style="height: 40px; width: 40px"
-        alt="Crowdfind logo"
-      />
+      <img src="assets/images/Crowdfund-logo.png" class="me-2" style="height: 40px; width: 40px" alt="Crowdfind logo" />
       <h2 class="navbar-brand">CrowdFind</h2>
     </div>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNav"
-      aria-controls="navbarNav"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
@@ -37,45 +25,37 @@
           <div class="bg-white search-div">
             <i class="bi bi-search"></i>
           </div>
-          <input
-            [(ngModel)]="searchQuery"
-            [ngModelOptions]="{ standalone: true }"
-            type="text"
-            class="form-control border-start-0"
-            placeholder="Search Events"
-            aria-label="Search"
-            (input)="onSearch()"
-          />
+          <input [(ngModel)]="searchQuery" [ngModelOptions]="{ standalone: true }" type="text"
+            class="form-control border-start-0" placeholder="Search Events" aria-label="Search" (input)="onSearch()" />
         </div>
 
         <div *ngIf="showDropdown" class="dropdown-menu show">
-          <a
-            *ngFor="let event of filteredEvents"
-            class="dropdown-item"
-            (click)="onSelectEvent(event?.id)"
-          >
+
+          <a *ngFor="let event of filteredEvents" class="dropdown-item" (click)="onSelectEvent(event?._id)">
             {{ event.title }}
           </a>
         </div>
       </form>
 
       <div class="d-flex align-items-center ms-3">
-        <button
-          *ngIf="!isLoggedIn"
-          class="btn btn-primary"
-          [routerLink]="['/signup']"
-          style="background-color: #FF5722;border:0;"
-        >
+        <button *ngIf="!isLoggedIn" class="btn btn-primary" [routerLink]="['/signup']"
+          style="background-color: #FF5722;border:0;">
           Sign Up
         </button>
         <div *ngIf="isLoggedIn" class="profile-image">
-          <img
+          <!-- <img
             src="assets/images/user-profile.png"
             alt="User Profile"
             class="rounded-circle"
             style="height: 40px; width: 40px;"
+<<<<<<< HEAD
           />
           <button class="btn btn-primary ms-2" (click)="toggleLoginState()" style="background-color: #FF5722; border:0;">
+=======
+          /> -->
+          <button class="btn btn-primary ms-2" (click)="toggleLoginState()"
+            style="background-color: #FF5722; border:0;">
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
             Log Out
           </button>
         </div>

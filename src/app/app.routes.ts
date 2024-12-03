@@ -5,6 +5,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+<<<<<<< HEAD
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { AccountReadyComponent } from './account-ready/account-ready.component';
 import { EmailVerificationComponent } from './email-verification/email-verification.component';
@@ -13,9 +14,23 @@ import { ForgotPasswordComponent } from './forgot-password/forgot-password.compo
 import { ConfirmOtpComponent } from './confirm-otp/confirm-otp.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { PasswordChangedComponent } from './password-changed/password-changed.component';
+=======
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardEventsComponent } from './dashboard-events/dashboard-events.component';
+import { DashboardHomeComponent } from './dashboard-home/dashboard-home.component';
+import { DashboardProfileComponent } from './dashboard-profile/dashboard-profile.component';
+import { DashboardEventDetailsComponent } from './dashboard-event-details/dashboard-event-details.component';
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
 
 export const routes: Routes = [
   { path: 'home', component: HomeComponent },
+  // {path:"home", component:DashboardComponent},
+  { path: 'dashboard', component: DashboardComponent, children: [
+    { path: 'events', component: DashboardEventsComponent },
+    { path: 'profile', component: DashboardProfileComponent },
+    { path: 'dashboardhome', component: DashboardHomeComponent },
+    {path:"event-details/:id",component:DashboardEventDetailsComponent}
+  ]},
   { path: 'events', component: EventsComponent },
   {path:"about", component:AboutUsComponent},
   { path: 'login', component: LoginComponent },

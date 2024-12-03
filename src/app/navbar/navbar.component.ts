@@ -31,12 +31,11 @@ export class NavbarComponent {
     if (this.isLoggedIn) {
       this.authService.logout();
       this.isLoggedIn = false;
+      this.router.navigate(['/home']); // Navigate to the homepage after logging out
     } else {
-      // Here, you might want to redirect to the login page
-      this.router.navigate(['/login']);
+      this.router.navigate(['/login']); // Navigate to the login page if not logged in
     }
   }
-
   onSearch(): void {
     if (this.searchQuery.length > 0) {
       this.eventService.getEvents().subscribe({
@@ -56,14 +55,16 @@ export class NavbarComponent {
       this.showDropdown = false;
     }
   }
-
+  
   onSelectEvent(eventId: string | undefined): void {
+    console.log('Event selected:', eventId);
     if (eventId) {
       this.searchQuery = '';
       this.showDropdown = false;
-      this.router.navigate(['/event-details', eventId]);
+      this.router.navigate(['/event-details', eventId]); 
     }
   }
+  
 
   @HostListener('document:click', ['$event'])
   onClickOutside(event: MouseEvent): void {

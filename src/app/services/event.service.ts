@@ -22,7 +22,7 @@ export class EventService {
     const url = `${this.baseUrl}/${eventId}/interest`;
     const headers = new HttpHeaders({
       'Content-Type': 'application/json',
-      'Authorization': `Bearer ${token}`
+      'Authorization': token
     });
     const body = { numberOfAttendees };
 

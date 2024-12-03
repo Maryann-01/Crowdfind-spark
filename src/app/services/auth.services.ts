@@ -1,30 +1,66 @@
+// import { Injectable } from '@angular/core';
+
+// @Injectable({
+//   providedIn: 'root',
+// })
+// export class AuthService {
+//   private isBrowser: boolean;
+
+//   constructor() {
+//     this.isBrowser = typeof window !== 'undefined';
+//   }
+
+//   login(token: string): void {
+//     if (this.isBrowser) {
+//       localStorage.setItem('jwt_token', token);
+//     }
+//   }
+
+//   logout(): void {
+//     if (this.isBrowser) {
+//       localStorage.removeItem('jwt_token');
+//     }
+//   }
+
+//   get loggedIn(): boolean {
+//     return this.isBrowser && !!localStorage.getItem('jwt_token');
+//   }
+
+//   getToken(): string | null {
+//     return this.isBrowser ? localStorage.getItem('jwt_token') : null;
+//   }
+// }
+
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root',
 })
 export class AuthService {
-  private isLoggedIn = typeof window !== 'undefined' && !!this.getToken(); // Check for window before accessing localStorage
+  private isBrowser: boolean;
+
+  constructor() {
+    this.isBrowser = typeof window !== 'undefined';
+  }
 
   login(token: string): void {
-    this.isLoggedIn = true;
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('jwt_token', token); // Store the token in local storage
+    if (this.isBrowser) {
+      localStorage.setItem('jwt_token', token);
     }
   }
 
   logout(): void {
-    this.isLoggedIn = false;
-    if (typeof window !== 'undefined') {
-      localStorage.removeItem('jwt_token'); // Remove the token from local storage
+    if (this.isBrowser) {
+      localStorage.removeItem('jwt_token');
     }
   }
 
   get loggedIn(): boolean {
-    return typeof window !== 'undefined' && !!localStorage.getItem('jwt_token'); // Check local storage directly
+    return this.isBrowser && !!localStorage.getItem('jwt_token');
   }
 
   getToken(): string | null {
-    return typeof window !== 'undefined' ? localStorage.getItem('jwt_token') : null;
+    return this.isBrowser ? localStorage.getItem('jwt_token') : null;
   }
 }
+

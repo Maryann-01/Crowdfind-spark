@@ -11,13 +11,8 @@
         <h2>Welcome Back to CrowdFind!</h2>
         <p>Please, Login to your account to access our features</p>
   
-        <button class="google-signup">
-          <img src="https://img.icons8.com/color/48/000000/google-logo.png" alt="Google Logo" />
-          Log in with Google
-        </button>
   
-        <div class="divider">---- or enter details below ----</div>
-  
+
 
         <form (ngSubmit)="onSubmit()">
           <label class="mend">Email</label>
@@ -29,15 +24,26 @@
           <div class="checkbox-container d-flex justify-space-between align-items-center">
             <div class="checkbox-rm d-flex align-items-center">
               <input type="checkbox" id="remember-me" [(ngModel)]="rememberMe" name="rememberMe" />
+<<<<<<< HEAD
               <label style="font-size:14px;">Remember me</label>
             </div>
             <a [routerLink]="'/forgot-password'" class="forgot-password" style="font-size:14px;">Forgot Password?</a>
+=======
+              <p >Remember me</p>
+            </div>
+            <a [routerLink]="'/forgot-password'" class="forgot-password" >Forgot Password?</a>
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
           </div>
   
           <button type="submit" class="signup-btn">Login</button>
         </form>
+<<<<<<< HEAD
         
         <span>Don't have an Account? <a [routerLink]="'/signup'">Sign Up</a></span>
+=======
+  
+        <span style="font-size:13px;">Don't have an Account? <a [routerLink]="'/signup'"  style="font-size:13px;margin-left:3px;text-decoration: none">Sign Up</a></span>
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
       </div>
     </div>
   </div>

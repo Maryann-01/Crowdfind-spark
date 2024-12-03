@@ -28,9 +28,9 @@
           <input type="number" id="numberOfAttendees" name="numberOfAttendees" [(ngModel)]="numberOfAttendees" required min="1" placeholder="Enter Your Number of Attendees Here" />
         </div>
 
-        <div class="d-flex align-items-center checkbox-field">
+        <div class="checkbox-field">
           <input type="checkbox" name="agreeToEmails" [(ngModel)]="agreeToEmails" />
-          <p style="width:100%; font-size: 14px;">
+          <p style="width:100%; font-size: 12px;margin-left:7px;">
             I agree to receive email and text message communications from <span style="color: #FF5722;">CrowdFind and its networks</span>
           </p>
         </div>
@@ -39,8 +39,8 @@
       </form>
     </div>
 
-    <div *ngIf="showSuccessModal" class="success-modal">
-      <img src="assets/images/success image.png" alt="success image"/>
+    <div *ngIf="showSuccessModal" class="success-modal d-flex align-items-center flex-column">
+      <img src="assets/images/success image.png" alt="success image" style="width:100px;height:100px"/>
       <p style="text-align: center;">Event has been Booked Successfully</p>
       <p style="text-align: center;">Kindly check your mail for your ticket and other Information</p>
       <a style="color: #FF5722;text-decoration: none;text-align: center;" (click)="closeSuccessModal()" [routerLink]="['/home']" class="home-link">Click here to go back to Home</a>

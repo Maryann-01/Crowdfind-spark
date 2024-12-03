@@ -4,11 +4,12 @@ import { Router } from '@angular/router';
 import { Clipboard } from '@angular/cdk/clipboard';
 import { EventService } from '../services/event.service';
 import { StayUpdatedComponent } from "../stay-updated/stay-updated.component";
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 @Component({
   selector: 'app-featured-events',
   standalone: true,
-  imports: [CommonModule, StayUpdatedComponent], 
+  imports: [CommonModule,  NgxSkeletonLoaderModule], 
   templateUrl: './featured-events.component.html',
   styleUrls: ['./featured-events.component.css']
 })
@@ -17,11 +18,12 @@ export class FeaturedEventsComponent implements OnInit {
   displayedEvents: any[] = [];
   increment: number = 6; 
   startIndex: number = 0; 
+  loading: boolean = true; 
 
   constructor(
     private router: Router, 
     private eventService: EventService,
-    private clipboard: Clipboard // Inject the Clipboard service
+    private clipboard: Clipboard 
   ) {}
 
   ngOnInit(): void {
@@ -29,9 +31,11 @@ export class FeaturedEventsComponent implements OnInit {
   }
 
   fetchEvents(): void {
+    this.loading = true; 
     this.eventService.getEvents().subscribe((data) => {
       this.events = data;
       this.displayedEvents = this.events.slice(this.startIndex, this.increment); 
+      this.loading = false; 
     });
   }
 
@@ -52,10 +56,7 @@ export class FeaturedEventsComponent implements OnInit {
   }
 
   loadMore(): void {
-    
     this.startIndex += this.increment;
-
-    
     const moreEvents = this.events.slice(this.startIndex, this.startIndex + this.increment);
     this.displayedEvents = [...this.displayedEvents, ...moreEvents];
   }

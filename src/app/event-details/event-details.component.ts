@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common'; // Import CommonModule
 import { ActivatedRoute } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { Clipboard } from '@angular/cdk/clipboard';
 import { EventService } from '../services/event.service';
 import { FooterComponent } from '../footer/footer.component';
 import { StayUpdatedComponent } from '../stay-updated/stay-updated.component';
 import { NavbarComponent } from '../navbar/navbar.component';
 import { InterestModalComponent } from '../interest-modal/interest-modal.component'; 
-
+import { DashboardComponent } from '../dashboard/dashboard.component';
 interface Event {
   _id: string;
   title: string;
@@ -16,29 +17,28 @@ interface Event {
   liked: boolean;
   description: string;
   tags: string[];
-  // selectedEventId: string = '';
 }
 
 @Component({
   selector: 'app-event-details',
   standalone: true,
-  imports: [CommonModule, FooterComponent, StayUpdatedComponent, NavbarComponent, InterestModalComponent], 
+  imports: [CommonModule, FooterComponent, StayUpdatedComponent, NavbarComponent, InterestModalComponent],
   templateUrl: './event-details.component.html',
   styleUrls: ['./event-details.component.css']
 })
 export class EventDetailsComponent implements OnInit {
   event: Event | undefined;
   showModal: boolean = false;
-  selectedEventId: string = ''; // Add selectedEventId property
+  selectedEventId: string = '';
 
   constructor(
     private route: ActivatedRoute,
-    private eventService: EventService
+    private eventService: EventService,
+    private clipboard: Clipboard
   ) {}
 
   ngOnInit(): void {
     const eventId = this.route.snapshot.paramMap.get('id');
-    
     if (eventId) {
       this.loadEventDetails(eventId);
     } else {
@@ -51,7 +51,7 @@ export class EventDetailsComponent implements OnInit {
       next: (events) => {
         this.event = events.find((event) => event._id === id);
         if (this.event) {
-          this.selectedEventId = this.event._id; // Set selectedEventId once event is found
+          this.selectedEventId = this.event._id;
           console.log('Fetched event details:', this.event);
         } else {
           console.error('Event not found with ID:', id);
@@ -76,5 +76,14 @@ export class EventDetailsComponent implements OnInit {
 
   closeModal(): void {
     this.showModal = false;
+  }
+
+  copyEventLink(): void {
+    if (this.event) {
+      const eventUrl = `${window.location.origin}/event-details/${this.event._id}`;
+      this.clipboard.copy(eventUrl);
+      console.log('Event link copied to clipboard:', eventUrl);
+      alert('Event link copied to clipboard!');
+    }
   }
 }
