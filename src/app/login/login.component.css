@@ -98,13 +98,8 @@ p {
     background: none;
     border: 1px solid #2C2A2A;
     border-radius: 3px;
-<<<<<<< HEAD
     height: 36px;
     width: 100%;
-=======
-    /* height: 22px; */
-    width: 90%;
->>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
     cursor: pointer;
     margin-top: 3px;
     margin-bottom: 5px;
@@ -121,20 +116,11 @@ font-family: Open Sans;
     margin-right: 5px;
 }
 .divider {
-<<<<<<< HEAD
     font-family: open sans;
     font-size: 14px;
     font-weight: 400;
     line-height: 19.07px;
     color: #545454;  
-=======
-    /* margin: 5px 0; */
-    font-size: 13px;
-    color: #777;
-    padding-left: 40px; 
-    text-align: center;  
-    padding-right:45px;
->>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
 }
 
     
@@ -143,34 +129,19 @@ font-family: Open Sans;
     flex-direction: center;
     align-items: center;
     margin-top: 15px;
-<<<<<<< HEAD
     font-family: open sans;
     font-size: 18px;
     font-weight: 400;
     line-height: 27.24px;
-=======
-    font-size: 17px;
-    margin-bottom:2px;
-font-family: Open Sans;
-
-font-weight: 400;
-
->>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
 }
 
 .form-container .log {
     border: 1px solid #433a3a;
     border-radius: 4px;
     box-sizing: border-box;
-<<<<<<< HEAD
     font-size: 14px;
     width: 100%;
     height: 36px;
-=======
-    width: 90%;
-    height: 28px;
-    font-size:12px;
->>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
     padding: 12px;
     margin-top: 3px;
 }
@@ -213,18 +184,9 @@ font-weight: 400;
     border: none;
     border-radius: 3px;
     cursor: pointer;
-<<<<<<< HEAD
-    width: 100%;
-    height: 36px;
-   font-family: open sans;
-    font-size: 14px;
-    font-weight: 700;
-    line-height: 24px;
-=======
     width: 90%;
    padding:10px;
     font-size: 13px;
->>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
     margin-top: 15px;
 }
 
@@ -275,6 +237,4 @@ margin-bottom: 2px;
 font-family: Open Sans;
 font-size: 12px;
 font-weight: 400;
-
-
 }

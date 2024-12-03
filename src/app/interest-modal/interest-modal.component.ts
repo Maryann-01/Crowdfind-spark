@@ -31,11 +31,7 @@ export class InterestModalComponent {
   ) {}
 
   onSubmit(): void {
-<<<<<<< HEAD
     const token = this.authService.getToken(); // Get token from AuthService
-=======
-    const token = this.authService.getToken(); 
->>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
     // console.log(token  , "1")
 
     if (!token) {
