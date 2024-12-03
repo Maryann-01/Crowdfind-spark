@@ -25,3 +25,14 @@ font-weight: 700;
     border:none;
     padding:0.7vh 1.4vw;
 }
+
+@media(max-width:480px){
+    .sect-img-txt{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .sectOne-txt, .sectOne-txt button{
+        width: 90vw;
+    }
+    
+}

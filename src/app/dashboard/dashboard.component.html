@@ -21,7 +21,7 @@
             </div>
         </form>
         <div class="profile-image">
-            <img src="assets/images/user-profile.png" alt="User Profile" class="rounded-circle"
+            <img [src]="profilePicture" alt="User Profile" class="rounded-circle"
                 style="height: 40px; width: 40px;" />
         </div>
     </div>
@@ -118,6 +118,13 @@
                             <a class="nav-link d-flex align-items-center " routerLink="/settings">
                                 <img src="assets/images/tnC.png" alt="Terms and Conditions Icon" class="me-2 icon-img" />
                                 <span class="dashboard-elem">Terms and Conditions</span>
+                                <span class="ms-auto">&#8250;</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-flex align-items-center " routerLink="/home">
+                                <img src="assets/images/logout-icon.png" alt="Logout Icon" class="me-2 icon-img" />
+                                <span class="dashboard-elem" style="color:#FF0101;">Logout</span>
                                 <span class="ms-auto">&#8250;</span>
                             </a>
                         </li>
