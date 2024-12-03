@@ -101,3 +101,29 @@ font-size: 16px;
 font-weight: 700;
 color: #FF5722;
 }
+
+@media ( max-width:480px){
+    .footer{
+        display: flex;
+        width: 100vw;
+        padding-bottom: 3rem;
+        /* margin: 0rem; */
+    }
+    .footer-flex{
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+    }
+    .socials{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap:1rem
+    }
+    .socials-div{
+        display: flex;
+        flex-direction: row;
+        gap:1.2rem
+        
+    }
+}

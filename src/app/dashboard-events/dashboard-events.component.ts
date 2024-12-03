@@ -38,11 +38,11 @@ export class DashboardEventsComponent implements OnInit{
   }
 
   viewEventDetails(event: any): void {
-    this.router.navigate(['/dashboard/dashboard-event-details', event._id]); 
+    this.router.navigate(['/dashboard/event-details', event._id]); 
   }
   
   shareEventLink(event: any): void {
-    const eventUrl = `${window.location.origin}/dashboard/dashboard-event-details/${event._id}`;
+    const eventUrl = `${window.location.origin}/dashboard/event-details/${event._id}`;
     this.clipboard.copy(eventUrl);
     console.log('Event link copied to clipboard:', eventUrl);
     alert('Event link copied to clipboard!');
@@ -59,6 +59,6 @@ export class DashboardEventsComponent implements OnInit{
   loadMore(): void {
     const moreEvents = this.events.slice(this.startIndex, this.startIndex + this.increment);
     this.displayedEvents = [...this.displayedEvents, ...moreEvents];
-    this.startIndex += this.increment; // Update the starting index
+    this.startIndex += this.increment; 
   }
 }

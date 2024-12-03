@@ -50,3 +50,18 @@ color: #767676;
    position:absolute;
    right:3%;
 }
+
+@media(max-width:480px){
+    .stayUpdated{
+        display: flex;
+        flex-direction: column;
+    }
+    .stayUpdated-text{
+        width: 90vw;
+    }
+    .stayUpdated-btn{
+        display: flex;
+        flex-direction: column;
+        width: 90vw;
+    }
+}
