@@ -1,5 +1,6 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 
  
  /* Basic Reset */
@@ -11,13 +12,27 @@
 }
 .signupDiv{
     display: flex;
+<<<<<<< HEAD
+    height: 100vh;
+    width:100vw;
+=======
     height: 100%;
   
     /* width:100vw; */
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
 }
 
 
 .left-section {
+<<<<<<< HEAD
+    width: 50%;
+    background: url('/assets/images/unsplash.jpg') no-repeat center center; 
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    object-fit: cover;
+    position: relative;
+=======
     width: 100%;
     height:100vh;
     background: url('/assets/images/unsplash.jpg') no-repeat center center; 
@@ -27,19 +42,19 @@
     flex-direction: column;
     justify-content: center;
      position: relative;
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
     flex: 1;
     
 }
 
 .logo {
     position: absolute;
-    top: 20px;
-    left: 20px;
+    top: 18.97px;
+    left: 74.67px;
     font-size: 24px;
-    font-weight: 600;
+    font-weight: 800;
     color: #FF5722;
     display: flex;
-    align-items: center;
 }
 
 .logo img {
@@ -49,7 +64,8 @@
 
 
 .right-section {
-    background: url('/assets/images/Frame 1000014043.png') ;
+    width: 50%;
+    background: url('/assets/images/Frame 1000014043.png');
     background-size: cover;
     background-position: center;
     /* height: 100%; */
@@ -59,41 +75,64 @@
     display: flex;
     align-items: center;
     justify-content: center;
+<<<<<<< HEAD
+    /* padding: 30px; */
+=======
     padding: 20px 0px 0px;
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
     position: relative;
 }
 
 .form-container {
+<<<<<<< HEAD
+    max-width: 100%;
+    text-align: center;
+=======
     width: 60%;
     /* max-width: 400px; */
     /* text-align: center; */
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
 }
 
 .form-container h2 {
-    margin-top: 50px;
-    margin-left: 30px;
+    /* margin-top: 10px; */
+    margin-left: 40px;
     margin-bottom: 5px;
     font-family: Open Sans;
-font-size: 24px;
-font-weight: 700;
-color: #2C2A2A;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.68px;
+    color: #2C2A2A;
 }
 
 .form-container p {
-    padding-left: 10px;
+    padding-left: 20px;
     align-items: center;
-    font-size: 12px;
-    color: #555;
-    padding-top: 7px;
-    margin-bottom: 30px;
+    font-family: open sans;
+    font-size: 14px;
+    color: #545454;
+    margin-bottom: 20px;
 }
 
 .google-signup {
+<<<<<<< HEAD
+    background: #fff;
+    font-family: open sans;
+    font-size: 14px;
+    font-weight: 700;
+    color: #2C2A2A;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 3px;
+    width: 100%;
+    height: 36px;
+=======
     background: none;
     border: 1px solid #2C2A2A;
     border-radius: 3px;
     /* height: 22px; */
     width: 75%;
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
     cursor: pointer;
     margin-top: 3px;
     margin-bottom: 5px;
@@ -104,8 +143,14 @@ font-family: Open Sans;
 }
 
 .google-signup img {
+<<<<<<< HEAD
+    width: 14px;
+    height: 14px;
+    margin-right: 5px;
+=======
     height: 10px;
     margin-right: 1px;
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
 }
 .form-container button:hover {
     background-color: #e64a19;
@@ -113,12 +158,20 @@ font-family: Open Sans;
 
 
 .divider {
+<<<<<<< HEAD
+    margin: 5px 0;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 19.07px;
+    color: #545454;
+=======
     /* margin: 5px 0; */
     font-size: 13px;
     color: #777;
     padding-left: 2px; 
     text-align: center;  
     padding-right:45px;
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
 }
 
 
@@ -132,6 +185,24 @@ font-family: Open Sans;
 
 .form-container .mend {
     display: flex;
+<<<<<<< HEAD
+    flex-direction: center;
+    justify-content: center;
+    margin-top: 10px;
+    font-family: Open Sans;
+    font-size: 14px;
+    font-weight: 400;     
+    line-height: 27.24px;
+}
+
+.form-container .log {
+    width: 100%;
+    height: 36px;
+    padding: 0 8px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+=======
     flex-direction: column;
     align-items: flex-start;
     margin-top: 15px;
@@ -146,6 +217,7 @@ font-weight: 400;
 .form-container .log {
     border: 1px solid #433a3a;
     border-radius: 3px;
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
     box-sizing: border-box;
     width: 75%;
     height: 30px;
@@ -156,34 +228,55 @@ font-weight: 400;
 
 
 .form-container input::placeholder {
-    color: #C9A6BCB9;
+    color: #C9A6BC;
+    opacity: 0.4;
     font-family: Open Sans;
     font-size: 12px;
     font-weight: 400;
+<<<<<<< HEAD
+    line-height: 19.07px;
+  }
+
+
+=======
 }
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
 .checkbox-container {
     display: flex;
-    margin: 10px 0px 0px;
+    align-items: center;
+    padding-top: 10px;
+    /* margin: 10px 0px 0px; */
 }
 
 .checkbox-container .cont {
+    align-items: center;
+    justify-content: center;
 font-family: Open Sans;
 font-size: 12px;
 font-weight: 400;
 color: #2C2A2A;
+<<<<<<< HEAD
+/* width:100%; */
+padding-left: 5px;
+}
+
+.pos {
+    align-items: center;
+    justify-content: center;
+=======
 /* width:75%; */
 /* padding-top: 10px; */
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
 }
 .tnC{
     color: #FF5722;
+    cursor: pointer;
 }
 
 .checkbox-container input {
-    /* margin-right: 2px; */
-    transform: scale(0.7);
     cursor: pointer;
-    width:20px;
-    height:30px;
+    width:14px;
+    height:14px;
 }
 
 .signup-btn {
@@ -192,11 +285,21 @@ color: #2C2A2A;
     border: none;
     border-radius: 3px;
     cursor: pointer;
+<<<<<<< HEAD
+    width: 100%;
+    height: 36px;
+    font-size: 12px;
+    line-height: 22px;
+    font-weight: 700;
+    margin-top: 15px;
+    text-align: center;
+=======
     width: 75%;
    padding:10px;
     font-size: 13px;
     /* margin-top: 15px; */
     margin-bottom:3px;
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
 }
 
 .signup-btn:hover {
@@ -207,7 +310,7 @@ color: #2C2A2A;
     display: inline-flex;
     color: #FF5722;
     text-decoration: none;
-    font-size: xx-small;
+    font-size: 12px;
 }
 
 .form-container a:hover {

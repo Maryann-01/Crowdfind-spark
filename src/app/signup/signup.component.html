@@ -30,16 +30,25 @@
         <input class="log" type="password" placeholder="Confirm Password Here" required [(ngModel)]="confirmPassword" name="confirmPassword" />
 
         <div class="checkbox-container">
+<<<<<<< HEAD
+          <input class="check" type="checkbox" id="terms" [(ngModel)]="termsAccepted" name="terms" required />
+          <label class="cont">
+=======
           <input type="checkbox" id="terms" [(ngModel)]="termsAccepted" name="terms" required  />
           <p class="cont" style="font-size:11px;width:79%;">
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
             I have read and agree to the <span class="tnC">Terms and Conditions</span> of CrowdFind
-          </p>
+          </label>
         </div>
 
         <button type="submit" class="signup-btn" >Create Account</button>
       </form>
 
+<<<<<<< HEAD
+      <span class="pos" style="font-size:12px;">Have an Account? <a [routerLink]="['/login']">Login</a></span>
+=======
       <span style="font-size:13px;">Have an Account? <a style="font-size:13px;margin-left:3px;text-decoration: none" [routerLink]="['/login']">Login</a></span>
+>>>>>>> 41c71c4f3f65d18998197038d649ea6028923186
     </div>
   </div>
 </div>

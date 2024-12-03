@@ -31,6 +31,10 @@ export class InterestModalComponent {
   ) {}
 
   onSubmit(): void {
+
+    const token = this.authService.getToken(); // Get token from AuthService
+    // console.log(token  , "1")
+
     this.submitted = true; 
 
    
@@ -39,7 +43,8 @@ export class InterestModalComponent {
       return;
     }
 
-    const token = this.authService.getToken(); 
+
+  
     if (!token) {
       return;
     }

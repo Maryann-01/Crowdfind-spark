@@ -2,7 +2,7 @@
   <div class="left-section">
     <div class="logo">
       <img src="assets/images/Crowdfund-logo.png" alt="CrowdFind Logo" />
-      <span>CrowdFind</span>
+      <span class="pave">CrowdFind</span>
     </div>
   </div>
   
@@ -16,10 +16,10 @@
 
         <form (ngSubmit)="onSubmit()">
           <label class="mend">Email</label>
-          <input style="font-size:11px;" class="log" type="email" placeholder="Enter Your Email Address Here" [(ngModel)]="email" name="email" />
+          <input class="log" type="email" placeholder="Enter Your Email Address Here" [(ngModel)]="email" name="email" />
   
           <label class="mend">Password</label>
-          <input class="log" style="font-size:11px;" type="password" placeholder="Enter Password Here" [(ngModel)]="password" name="password" />
+          <input class="log" type="password" placeholder="Enter Password Here" [(ngModel)]="password" name="password" />
   
           <div class="checkbox-container d-flex justify-space-between align-items-center">
             <div class="checkbox-rm d-flex align-items-center">
