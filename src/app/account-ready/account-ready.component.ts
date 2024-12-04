@@ -17,7 +17,7 @@ export class AccountReadyComponent implements OnInit {
   ngOnInit(): void {
     setTimeout(() => {
       this.router.navigate(['/home']); // Replace '/home' with your actual home route
-    }, 5000); // Redirect after 5 seconds
+    }, 10000); // Redirect after 10 seconds
   }
 }
 
