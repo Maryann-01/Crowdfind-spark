@@ -1,27 +1,86 @@
-# CrowdfindSpark
+# Crowdfind Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.7.
+Crowdfind is a web application that helps users discover events, book tickets, manage profiles, and save favorite events. This repository contains the **frontend** built with Angular.
 
-## Development server
+## Project Overview
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Crowdfind allows users to:
 
-## Code scaffolding
+- Search and browse upcoming events  
+- Book tickets and indicate interest  
+- Manage user profiles with authentication  
+- Save favorite events by clicking the love icon  
+- Share event links with others  
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The frontend is built using Angular 18.2.7 and communicates with a RESTful backend API.
 
-## Build
+## Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- **Event Discovery:** View and search events with detailed information.  
+- **User Authentication:** Register, log in, and manage sessions securely.  
+- **Profile Management:** Update profile details and upload profile pictures.  
+- **Favorite Events:** Save events for quick access later.  
+- **Event Booking:** Indicate interest and book tickets for events.  
+- **Responsive Design:** Works well on desktop and mobile devices.  
 
-## Running unit tests
+## Installation
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Prerequisites
 
-## Running end-to-end tests
+- [Node.js](https://nodejs.org/) (v16 or higher recommended)  
+- Angular CLI (v18.2.7)  
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Steps
 
-## Further help
+1. Clone the repository:
+git clone [https://github.com/Maryann-01/Crowdfind.git](https://github.com/Maryann-01/Crowdfind.git)
+cd Crowdfind
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+2. nstall dependencies:  
+npm install
+
+
+3. Configure environment variables:  
+Create a `.env` or edit `src/environments/environment.ts` to set the backend API URL, for example:  
+export const environment = {
+production: false,
+apiUrl: 'https://crowdfind-backend.onrender.com/api'
+};
+
+
+4. Run the development server:  
+ng serve
+
+
+5. Open your browser and navigate to [http://localhost:4200](http://localhost:4200).
+
+## Usage
+
+- Browse the homepage to see upcoming events.  
+- Register or log in to access personalized features.  
+- Click event titles to view details.  
+- Use the heart-shaped icon to save favorite events.  
+- Book tickets or indicate interest in events.  
+- Manage your profile from the user dashboard.  
+
+## API Integration
+
+The frontend interacts with the backend REST API to fetch data and perform user actions.
+
+- **Backend Base URL:** `https://crowdfind-backend.onrender.com/api`  
+- **Authentication:** Uses JWT tokens stored in local storage and sent via Authorization headers.  
+- **Key API Endpoints Used:**  
+- User registration and login: `/auth/register`, `/auth/login`  
+- Fetch events: `/event/`  
+- Indicate interest/book event: `/event/:eventId/interest`  
+- Save favorite events: `/auth/save-event/:eventId`  
+- User profile: `/auth/profile`  
+
+
+## Scripts
+
+- `ng serve` - Run the development server  
+- `ng build` - Build the project for production  
+- `ng test` - Run unit tests via Karma  
+- `ng e2e` - Run end-to-end tests  
+
